@@ -16,7 +16,8 @@
 
 # Override these to match Apache Hadoop's requirements
 
-personality_plugins "maven,asflicense,author,checkstyle,findbugs,javac,compile,javadoc,whitespace,xml,jira"
+#personality_plugins "maven,asflicense,author,checkstyle,findbugs,javac,compile,javadoc,whitespace,xml,jira"
+personality_plugins "whitespace"
 
 ## @description  Globals specific to this personality
 ## @audience     private
@@ -38,9 +39,10 @@ function personality_globals
   #shellcheck disable=SC2034
   FINDBUGS_SKIP_MAVEN_SOURCE_CHECK=true
   #shellcheck disable=SC2034
-  WHITESPACE_EOL_IGNORE_LIST='.*.q.out','.*/gen/thrift/gen-javabean/.*'
+  WHITESPACE_EOL_IGNORE_LIST=('.*.q.out' '.*/gen/thrift/gen-javabean/.*')
   #shellcheck disable=SC2034
   WHITESPACE_TABS_IGNORE_LIST='.*.q.out','.*/gen/thrift/gen-javabean/.*'
+  echo "WHITESPACE_EOL_IGNORE_LIST=('.*.q.out' '.*/gen/thrift/gen-javabean/.*')"
 }
 
 ## @description  Queue up modules for this personality

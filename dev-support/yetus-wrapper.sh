@@ -67,11 +67,14 @@ HIVE_YETUS_VERSION=${HIVE_YETUS_VERSION:-0.5.0}
 BIN=$(yetus_abs "${BASH_SOURCE-$0}")
 BINDIR=$(dirname "${BIN}")
 
+echo BIN: $BIN , BINDIR: $BINDIR , YETUS_HOME: $YETUS_HOME
+
 ###
 ###  if YETUS_HOME is set, then try to use it
 ###
 if [[ -n "${YETUS_HOME}"
    && -x "${YETUS_HOME}/bin/${WANTED}" ]]; then
+  echo "${YETUS_HOME}/bin/${WANTED}" "${ARGV[@]}"
   exec "${YETUS_HOME}/bin/${WANTED}" "${ARGV[@]}"
 fi
 
@@ -95,7 +98,38 @@ HIVE_PATCHPROCESS=${mytmpdir}
 ## if we've already DL'd it, then short cut
 ##
 if [[ -x "${HIVE_PATCHPROCESS}/yetus-${HIVE_YETUS_VERSION}/bin/${WANTED}" ]]; then
+  echo "Running before download"
+  if [[ -f /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace2.sh ]]; then
+    cp /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace2.sh /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh;
+  fi
+  cp /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace2.sh
+ 
+  sed -i '/echo WHITESPACE_EOL_IGNORE_LIST/d' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh
+  sed -i '/echo WHITESPACE_EOL_IGNORE_LIST/d' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch2.sh
+  if [[ -f /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch2.sh ]]; then
+    cp /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch2.sh /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh;
+  fi
+  cp /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch2.sh
+ 
+  #sed -i '99i   echo \\' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh
+  #sed -i '19i   echo WHITESPACE_EOL_IGNORE_LIST=Makefile' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh
+  sed -i '87i   echo WEIL: $WHITESPACE_EOL_IGNORE_LIST, ${WHITESPACE_EOL_IGNORE_LIST[0]}, ${WHITESPACE_EOL_IGNORE_LIST[1]}' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh
+
+
+  #sed -i '3254i   echo WHITESPACE_EOL_IGNORE_LIST-2: $WHITESPACE_EOL_IGNORE_LIST, ${WHITESPACE_EOL_IGNORE_LIST[0]}, ${WHITESPACE_EOL_IGNORE_LIST[1]}' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh
+  #sed -i '3227i   echo WHITESPACE_EOL_IGNORE_LIST-1: $WHITESPACE_EOL_IGNORE_LIST, ${WHITESPACE_EOL_IGNORE_LIST[0]}, ${WHITESPACE_EOL_IGNORE_LIST[1]}' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh
+  #sed -i '2937i   echo WHITESPACE_EOL_IGNORE_LIST-4: $WHITESPACE_EOL_IGNORE_LIST, ${WHITESPACE_EOL_IGNORE_LIST[0]}, ${WHITESPACE_EOL_IGNORE_LIST[1]}' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh
+  #sed -i '2921i   echo WHITESPACE_EOL_IGNORE_LIST-3: $WHITESPACE_EOL_IGNORE_LIST, ${WHITESPACE_EOL_IGNORE_LIST[0]}, ${WHITESPACE_EOL_IGNORE_LIST[1]}' /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh
+
+  cat /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh
+  cat /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh  
+ 
+  echo "${HIVE_PATCHPROCESS}/yetus-${HIVE_YETUS_VERSION}/bin/${WANTED}" "${ARGV[@]}"
   exec "${HIVE_PATCHPROCESS}/yetus-${HIVE_YETUS_VERSION}/bin/${WANTED}" "${ARGV[@]}"
+
+  mv /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace2.sh /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh
+  mv /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch2.sh /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.sh
+
 fi
 
 ##
@@ -166,6 +200,9 @@ fi
 
 if [[ -x "${HIVE_PATCHPROCESS}/yetus-${HIVE_YETUS_VERSION}/bin/${WANTED}" ]]; then
   popd >/dev/null
+  echo "Running after download"
+  cat /data/jenkins/ws/workspace/HIVE-19326-union_fast_hive-yetus/patchprocess/yetus-0.7.0/lib/precommit/test-patch.d/whitespace.sh
+  echo "${HIVE_PATCHPROCESS}/yetus-${HIVE_YETUS_VERSION}/bin/${WANTED}" "${ARGV[@]}"
   exec "${HIVE_PATCHPROCESS}/yetus-${HIVE_YETUS_VERSION}/bin/${WANTED}" "${ARGV[@]}"
 fi
 

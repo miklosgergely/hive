@@ -95,7 +95,7 @@ build_ptest2() {
 
 	test -d $path || mkdir -p $path
 	rm -rf $path
-	git clone --depth 1 -b $BRANCH https://github.com/apache/hive.git $path/ || return 1
+	git clone --depth 1 -b $BRANCH https://github.com/miklosgergely/hive.git $path/ || return 1
 	cd $path/testutils/ptest2
 	mvn clean package -B -DskipTests -Drat.numUnapprovedLicenses=1000 -Dmaven.repo.local=$WORKSPACE/.m2 || return 1
 
