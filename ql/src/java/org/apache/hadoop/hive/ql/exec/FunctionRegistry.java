@@ -193,6 +193,7 @@ public final class FunctionRegistry {
 
   static {
     system.registerGenericUDF("concat", GenericUDFConcat.class);
+    system.registerUDF("mid", UDFSubstr.class, false);
     system.registerUDF("substr", UDFSubstr.class, false);
     system.registerUDF("substring", UDFSubstr.class, false);
     system.registerGenericUDF("substring_index", GenericUDFSubstringIndex.class);
@@ -472,6 +473,8 @@ public final class FunctionRegistry {
     system.registerGenericUDAF("bloom_filter", new GenericUDAFBloomFilter());
     system.registerGenericUDAF("approx_distinct", new GenericUDAFApproximateDistinct());
     system.registerUDAF("percentile", UDAFPercentile.class);
+    system.registerGenericUDAF("percentile_cont", new GenericUDAFPercentileCont());
+    system.registerGenericUDAF("percentile_disc", new GenericUDAFPercentileDisc());
 
 
     // Generic UDFs
@@ -498,6 +501,7 @@ public final class FunctionRegistry {
     system.registerGenericUDF("in_file", GenericUDFInFile.class);
     system.registerGenericUDF("instr", GenericUDFInstr.class);
     system.registerGenericUDF("locate", GenericUDFLocate.class);
+    system.registerGenericUDF("position", GenericUDFLocate.class);
     system.registerGenericUDF("elt", GenericUDFElt.class);
     system.registerGenericUDF("concat_ws", GenericUDFConcatWS.class);
     system.registerGenericUDF("sort_array", GenericUDFSortArray.class);
