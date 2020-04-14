@@ -33,7 +33,7 @@ SELECT TRANSFORM(
 PREHOOK: type: QUERY
 PREHOOK: Input: default@test1_n15
 PREHOOK: Input: default@test1_n15@partitionid=1
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: FROM (
  FROM test1_n15
  SELECT partitionId, 111 as col2, 222 as col3, 333 as col4
@@ -50,7 +50,7 @@ SELECT TRANSFORM(
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@test1_n15
 POSTHOOK: Input: default@test1_n15@partitionid=1
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	111	222	333
 1	111	222	333
 1	111	222	333

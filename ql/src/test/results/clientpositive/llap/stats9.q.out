@@ -26,17 +26,21 @@ POSTHOOK: Input: default@analyze_srcbucket
 POSTHOOK: Output: default@analyze_srcbucket
 STAGE DEPENDENCIES:
   Stage-0 is a root stage
-  Stage-1 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-0
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: analyze_srcbucket
-            Statistics: Num rows: 391 Data size: 116030 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: analyze_srcbucket
+            Execution mode: llap
+            LLAP IO: no inputs
 
-  Stage: Stage-1
+  Stage: Stage-2
     Stats Work
       Basic Stats Work:
 

@@ -33,21 +33,16 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: src
-          Statistics: Num rows: 500 Data size: 5312 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: array(const struct(1,'dude!'),const struct(2,'Wheres'),const struct(3,'my car?')) (type: array<struct<col1:int,col2:string>>)
             outputColumnNames: _col0
-            Statistics: Num rows: 500 Data size: 32000 Basic stats: COMPLETE Column stats: COMPLETE
             UDTF Operator
-              Statistics: Num rows: 500 Data size: 32000 Basic stats: COMPLETE Column stats: COMPLETE
               function name: inline
               Select Operator
                 expressions: col1 (type: int), col2 (type: string)
                 outputColumnNames: _col0, _col1
-                Statistics: Num rows: 500 Data size: 4000 Basic stats: COMPLETE Column stats: COMPLETE
                 Limit
                   Number of rows: 2
-                  Statistics: Num rows: 2 Data size: 16 Basic stats: COMPLETE Column stats: COMPLETE
                   ListSink
 
 PREHOOK: query: SELECT inline( 

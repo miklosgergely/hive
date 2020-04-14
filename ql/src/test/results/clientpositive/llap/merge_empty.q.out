@@ -41,5 +41,3 @@ POSTHOOK: Input: default@bar_n1
 POSTHOOK: Output: default@foo_n6
 POSTHOOK: Lineage: foo_n6.a SIMPLE [(bar_n1)bar_n1.FieldSchema(name:a, type:bigint, comment:null), ]
 POSTHOOK: Lineage: foo_n6.b SIMPLE [(bar_n1)bar_n1.FieldSchema(name:b, type:string, comment:null), ]
-Found 256 items
-#### A masked pattern was here ####

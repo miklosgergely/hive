@@ -7,9 +7,9 @@ POSTHOOK: Output: sum_list
 PREHOOK: query: select sum_list(array(key, key)) from src
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select sum_list(array(key, key)) from src
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 260182

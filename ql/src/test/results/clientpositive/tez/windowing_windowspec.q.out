@@ -47,11 +47,11 @@ POSTHOOK: Output: default@over10k_n18
 PREHOOK: query: select s, sum(b) over (partition by i order by s,b rows unbounded preceding) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, sum(b) over (partition by i order by s,b rows unbounded preceding) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 alice ichabod	4294967441
 alice robinson	8589934917
 bob robinson	12884902266
@@ -155,11 +155,11 @@ rachel young	85899348171
 PREHOOK: query: select s, sum(f) over (partition by d order by s,f rows unbounded preceding) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, sum(f) over (partition by d order by s,f rows unbounded preceding) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 calvin miller	8.390000343322754
 holly polk	5.289999961853027
 wendy quirinius	30.789999961853027
@@ -263,11 +263,11 @@ rachel ellison	10.600000381469727
 PREHOOK: query: select s, sum(f) over (partition by ts order by f range between current row and unbounded following) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, sum(f) over (partition by ts order by f range between current row and unbounded following) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 gabriella xylophone	1276.850001335144
 calvin brown	1273.68000125885
 jessica laertes	1262.7900009155273
@@ -371,11 +371,11 @@ priscilla garcia	805.8400115966797
 PREHOOK: query: select s, avg(f) over (partition by ts order by s,f rows between current row and 5 following) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, avg(f) over (partition by ts order by s,f rows between current row and 5 following) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 bob ovid	28.053333441416424
 calvin brown	38.73666652043661
 calvin laertes	51.493333180745445
@@ -479,11 +479,11 @@ tom hernandez	63.331667264302574
 PREHOOK: query: select s, avg(d) over (partition by t order by s,d desc rows between 5 preceding and 5 following) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, avg(d) over (partition by t order by s,d desc rows between 5 preceding and 5 following) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 alice allen	33.20166666666666
 alice davidson	30.741428571428568
 alice falkner	27.742499999999996
@@ -587,11 +587,11 @@ david miller	28.40090909090909
 PREHOOK: query: select s, sum(i) over(partition by ts order by s) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, sum(i) over(partition by ts order by s) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 bob ovid	65748
 calvin brown	131440
 calvin laertes	197097
@@ -695,11 +695,11 @@ tom hernandez	1576947
 PREHOOK: query: select f, sum(f) over (partition by ts order by f range between unbounded preceding and current row) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select f, sum(f) over (partition by ts order by f range between unbounded preceding and current row) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 3.17	3.1700000762939453
 10.89	14.0600004196167
 14.54	28.600000381469727
@@ -803,11 +803,11 @@ POSTHOOK: Input: default@over10k_n18
 PREHOOK: query: select f, sum(f) over (partition by ts order by f rows between 2 preceding and 1 preceding) from over10k_n18 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select f, sum(f) over (partition by ts order by f rows between 2 preceding and 1 preceding) from over10k_n18 limit 100
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 3.17	NULL
 10.89	3.1700000762939453
 14.54	14.0600004196167
@@ -911,11 +911,11 @@ POSTHOOK: Input: default@over10k_n18
 PREHOOK: query: select s, i, round(avg(d) over (partition by s order by i) / 10.0 , 2) from over10k_n18 limit 7
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, i, round(avg(d) over (partition by s order by i) / 10.0 , 2) from over10k_n18 limit 7
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 alice allen	65545	2.22
 alice allen	65557	2.58
 alice allen	65600	3.38
@@ -926,11 +926,11 @@ alice allen	65720	2.76
 PREHOOK: query: select s, i, round((avg(d) over  w1 + 10.0) - (avg(d) over w1 - 10.0),2) from over10k_n18 window w1 as (partition by s order by i) limit 7
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, i, round((avg(d) over  w1 + 10.0) - (avg(d) over w1 - 10.0),2) from over10k_n18 window w1 as (partition by s order by i) limit 7
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 alice allen	65545	20.0
 alice allen	65557	20.0
 alice allen	65600	20.0
@@ -941,11 +941,11 @@ alice allen	65720	20.0
 PREHOOK: query: select s, i from ( select s, i, round((avg(d) over  w1 + 10.0) - (avg(d) over w1 - 10.0),2) from over10k_n18 window w1 as (partition by s order by i)) X limit 7
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select s, i from ( select s, i, round((avg(d) over  w1 + 10.0) - (avg(d) over w1 - 10.0),2) from over10k_n18 window w1 as (partition by s order by i)) X limit 7
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n18
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 alice allen	65545
 alice allen	65557
 alice allen	65600
@@ -986,13 +986,13 @@ from over10k_2
 where i = 65536
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_2
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select ts, i, sum(f) over (partition by i order by ts)
 from over10k_2
 where i = 65536
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_2
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2013-03-01 09:11:58.703071	65536	8.859999656677246
 2013-03-01 09:11:58.703073	65536	27.119999885559082
 2013-03-01 09:11:58.703077	65536	72.77999973297119
@@ -1043,13 +1043,13 @@ from over10k_2
 where i = 65536
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_2
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select tstz, i, sum(f) over (partition by i order by tstz)
 from over10k_2
 where i = 65536
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_2
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2013-03-01 09:11:58.703071 US/Pacific	65536	8.859999656677246
 2013-03-01 09:11:58.703073 US/Pacific	65536	27.119999885559082
 2013-03-01 09:11:58.703077 US/Pacific	65536	72.77999973297119
@@ -1100,13 +1100,13 @@ from over10k_2
 where i = 65536
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_2
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select b, i, sum(f) over (partition by i order by b)
 from over10k_2
 where i = 65536
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_2
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 4294967299	65536	42.20000076293945
 4294967307	65536	118.8900032043457
 4294967308	65536	165.02000427246094

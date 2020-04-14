@@ -20,11 +20,11 @@ PREHOOK: query: SELECT t.newCol FROM (
 ) t
 PREHOOK: type: QUERY
 PREHOOK: Input: default@transform3_t1
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT t.newCol FROM (
   SELECT TRANSFORM(col) USING 'cat' AS (NewCol string) FROM transform3_t1
 ) t
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@transform3_t1
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 aaaa

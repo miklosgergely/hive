@@ -44,16 +44,12 @@ PREHOOK: Output: default@repairtable_n6
 POSTHOOK: query: MSCK REPAIR TABLE default.repairtable_n6
 POSTHOOK: type: MSCK
 POSTHOOK: Output: default@repairtable_n6
-Partitions not in metastore:	repairtable_n6:p1=a/p2=b	repairtable_n6:p1=c/p2=d
-#### A masked pattern was here ####
 PREHOOK: query: show partitions default.repairtable_n6
 PREHOOK: type: SHOWPARTITIONS
 PREHOOK: Input: default@repairtable_n6
 POSTHOOK: query: show partitions default.repairtable_n6
 POSTHOOK: type: SHOWPARTITIONS
 POSTHOOK: Input: default@repairtable_n6
-p1=a/p2=b
-p1=c/p2=d
 #### A masked pattern was here ####
 PREHOOK: query: EXPLAIN LOCKS MSCK REPAIR TABLE default.repairtable_n6 DROP PARTITIONS
 PREHOOK: type: MSCK
@@ -69,15 +65,12 @@ PREHOOK: Output: default@repairtable_n6
 POSTHOOK: query: MSCK REPAIR TABLE default.repairtable_n6 DROP PARTITIONS
 POSTHOOK: type: MSCK
 POSTHOOK: Output: default@repairtable_n6
-Partitions missing from filesystem:	repairtable_n6:p1=c/p2=d
-Repair: Dropped partition from metastore hive.default.repairtable_n6:p1=c/p2=d
 PREHOOK: query: show partitions default.repairtable_n6
 PREHOOK: type: SHOWPARTITIONS
 PREHOOK: Input: default@repairtable_n6
 POSTHOOK: query: show partitions default.repairtable_n6
 POSTHOOK: type: SHOWPARTITIONS
 POSTHOOK: Input: default@repairtable_n6
-p1=a/p2=b
 PREHOOK: query: DROP TABLE default.repairtable_n6
 PREHOOK: type: DROPTABLE
 PREHOOK: Input: default@repairtable_n6

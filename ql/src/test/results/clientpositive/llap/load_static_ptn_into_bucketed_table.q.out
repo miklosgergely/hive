@@ -16,41 +16,54 @@ POSTHOOK: Input: default@src_bucket_tbl__temp_table_for_load_data__
 POSTHOOK: Output: default@src_bucket_tbl@ds=2008-04-08
 STAGE DEPENDENCIES:
   Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
-  Stage-2 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-1
+  Stage-0 depends on stages: Stage-2
+  Stage-3 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: src_bucket_tbl__temp_table_for_load_data__
-            Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-            Select Operator
-              expressions: key (type: int), value (type: string)
-              outputColumnNames: _col0, _col1
-              Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-              Reduce Output Operator
-                key expressions: _col0 (type: int)
-                null sort order: a
-                sort order: +
-                Map-reduce partition columns: _col0 (type: int)
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: src_bucket_tbl__temp_table_for_load_data__
+                  Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                  Select Operator
+                    expressions: key (type: int), value (type: string)
+                    outputColumnNames: _col0, _col1
+                    Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      key expressions: _col0 (type: int)
+                      null sort order: a
+                      sort order: +
+                      Map-reduce partition columns: _col0 (type: int)
+                      Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                      value expressions: _col1 (type: string)
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Reduce Operator Tree:
+              Select Operator
+                expressions: KEY.reducesinkkey0 (type: int), VALUE._col0 (type: string)
+                outputColumnNames: _col0, _col1
                 Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-                value expressions: _col1 (type: string)
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), VALUE._col0 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-          File Output Operator
-            compressed: false
-            Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-            table:
-                input format: org.apache.hadoop.mapred.TextInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                name: default.src_bucket_tbl
+                File Output Operator
+                  compressed: false
+                  Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                  table:
+                      input format: org.apache.hadoop.mapred.TextInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      name: default.src_bucket_tbl
+
+  Stage: Stage-2
+    Dependency Collection
 
   Stage: Stage-0
     Move Operator
@@ -64,7 +77,7 @@ STAGE PLANS:
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.src_bucket_tbl
 
-  Stage: Stage-2
+  Stage: Stage-3
     Stats Work
       Basic Stats Work:
 
@@ -231,41 +244,54 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src_bucket_tbl__temp_table_for_load_data__
 STAGE DEPENDENCIES:
   Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
-  Stage-2 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-1
+  Stage-0 depends on stages: Stage-2
+  Stage-3 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: src_bucket_tbl__temp_table_for_load_data__
-            Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
-            Select Operator
-              expressions: key (type: int), value (type: string), ds (type: string)
-              outputColumnNames: _col0, _col1, _col2
-              Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
-              Reduce Output Operator
-                key expressions: _col2 (type: string), _bucket_number (type: string), _col0 (type: int)
-                null sort order: aaa
-                sort order: +++
-                Map-reduce partition columns: _col2 (type: string)
-                Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
-                value expressions: _col1 (type: string)
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY._col0 (type: int), VALUE._col1 (type: string), KEY._col2 (type: string), KEY._bucket_number (type: string)
-          outputColumnNames: _col0, _col1, _col2, _bucket_number
-          File Output Operator
-            compressed: false
-            Dp Sort State: PARTITION_BUCKET_SORTED
-            Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
-            table:
-                input format: org.apache.hadoop.mapred.TextInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                name: default.src_bucket_tbl
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: src_bucket_tbl__temp_table_for_load_data__
+                  Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
+                  Select Operator
+                    expressions: key (type: int), value (type: string), ds (type: string)
+                    outputColumnNames: _col0, _col1, _col2
+                    Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      key expressions: _col2 (type: string), _bucket_number (type: string), _col0 (type: int)
+                      null sort order: aaa
+                      sort order: +++
+                      Map-reduce partition columns: _col2 (type: string)
+                      Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
+                      value expressions: _col1 (type: string)
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Reduce Operator Tree:
+              Select Operator
+                expressions: KEY._col0 (type: int), VALUE._col1 (type: string), KEY._col2 (type: string), KEY._bucket_number (type: string)
+                outputColumnNames: _col0, _col1, _col2, _bucket_number
+                File Output Operator
+                  compressed: false
+                  Dp Sort State: PARTITION_BUCKET_SORTED
+                  Statistics: Num rows: 35 Data size: 13020 Basic stats: COMPLETE Column stats: NONE
+                  table:
+                      input format: org.apache.hadoop.mapred.TextInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      name: default.src_bucket_tbl
+
+  Stage: Stage-2
+    Dependency Collection
 
   Stage: Stage-0
     Move Operator
@@ -280,7 +306,7 @@ STAGE PLANS:
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.src_bucket_tbl
 
-  Stage: Stage-2
+  Stage: Stage-3
     Stats Work
       Basic Stats Work:
 
@@ -447,41 +473,54 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src_bucket_tbl__temp_table_for_load_data__
 STAGE DEPENDENCIES:
   Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
-  Stage-2 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-1
+  Stage-0 depends on stages: Stage-2
+  Stage-3 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: src_bucket_tbl__temp_table_for_load_data__
-            Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
-            Select Operator
-              expressions: key (type: int), value (type: string), ds (type: string)
-              outputColumnNames: _col0, _col1, _col2
-              Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
-              Reduce Output Operator
-                key expressions: _col2 (type: string), _bucket_number (type: string), _col0 (type: int)
-                null sort order: aaa
-                sort order: +++
-                Map-reduce partition columns: _col2 (type: string)
-                Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
-                value expressions: _col1 (type: string)
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY._col0 (type: int), VALUE._col1 (type: string), KEY._col2 (type: string), KEY._bucket_number (type: string)
-          outputColumnNames: _col0, _col1, _col2, _bucket_number
-          File Output Operator
-            compressed: false
-            Dp Sort State: PARTITION_BUCKET_SORTED
-            Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
-            table:
-                input format: org.apache.hadoop.mapred.TextInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                name: default.src_bucket_tbl
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: src_bucket_tbl__temp_table_for_load_data__
+                  Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
+                  Select Operator
+                    expressions: key (type: int), value (type: string), ds (type: string)
+                    outputColumnNames: _col0, _col1, _col2
+                    Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      key expressions: _col2 (type: string), _bucket_number (type: string), _col0 (type: int)
+                      null sort order: aaa
+                      sort order: +++
+                      Map-reduce partition columns: _col2 (type: string)
+                      Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
+                      value expressions: _col1 (type: string)
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Reduce Operator Tree:
+              Select Operator
+                expressions: KEY._col0 (type: int), VALUE._col1 (type: string), KEY._col2 (type: string), KEY._bucket_number (type: string)
+                outputColumnNames: _col0, _col1, _col2, _bucket_number
+                File Output Operator
+                  compressed: false
+                  Dp Sort State: PARTITION_BUCKET_SORTED
+                  Statistics: Num rows: 68 Data size: 24552 Basic stats: COMPLETE Column stats: NONE
+                  table:
+                      input format: org.apache.hadoop.mapred.TextInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      name: default.src_bucket_tbl
+
+  Stage: Stage-2
+    Dependency Collection
 
   Stage: Stage-0
     Move Operator
@@ -496,7 +535,7 @@ STAGE PLANS:
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.src_bucket_tbl
 
-  Stage: Stage-2
+  Stage: Stage-3
     Stats Work
       Basic Stats Work:
 
@@ -664,41 +703,54 @@ POSTHOOK: Input: default@src_bucket_tbl__temp_table_for_load_data__
 POSTHOOK: Output: default@src_bucket_tbl@hr=30/ds=2010-05-07
 STAGE DEPENDENCIES:
   Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
-  Stage-2 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-1
+  Stage-0 depends on stages: Stage-2
+  Stage-3 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: src_bucket_tbl__temp_table_for_load_data__
-            Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-            Select Operator
-              expressions: key (type: int), value (type: string)
-              outputColumnNames: _col0, _col1
-              Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-              Reduce Output Operator
-                key expressions: _col0 (type: int)
-                null sort order: a
-                sort order: +
-                Map-reduce partition columns: _col0 (type: int)
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: src_bucket_tbl__temp_table_for_load_data__
+                  Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                  Select Operator
+                    expressions: key (type: int), value (type: string)
+                    outputColumnNames: _col0, _col1
+                    Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      key expressions: _col0 (type: int)
+                      null sort order: a
+                      sort order: +
+                      Map-reduce partition columns: _col0 (type: int)
+                      Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                      value expressions: _col1 (type: string)
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Reduce Operator Tree:
+              Select Operator
+                expressions: KEY.reducesinkkey0 (type: int), VALUE._col0 (type: string)
+                outputColumnNames: _col0, _col1
                 Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-                value expressions: _col1 (type: string)
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), VALUE._col0 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-          File Output Operator
-            compressed: false
-            Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
-            table:
-                input format: org.apache.hadoop.mapred.TextInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                name: default.src_bucket_tbl
+                File Output Operator
+                  compressed: false
+                  Statistics: Num rows: 47 Data size: 8648 Basic stats: COMPLETE Column stats: NONE
+                  table:
+                      input format: org.apache.hadoop.mapred.TextInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      name: default.src_bucket_tbl
+
+  Stage: Stage-2
+    Dependency Collection
 
   Stage: Stage-0
     Move Operator
@@ -713,7 +765,7 @@ STAGE PLANS:
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.src_bucket_tbl
 
-  Stage: Stage-2
+  Stage: Stage-3
     Stats Work
       Basic Stats Work:
 

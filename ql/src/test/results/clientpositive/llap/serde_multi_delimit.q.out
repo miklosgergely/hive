@@ -90,7 +90,7 @@ NULL	NULL	NULL	NULL	NULL
 8	8		8	8
 9	9		9	9
 10101010	NULL	NULL	NULL	NULL
-Warning: Shuffle Join JOIN[30][tables = [$hdt$_0, $hdt$_1]] in Stage 'Stage-1:MAPRED' is a cross product
+Warning: Shuffle Join MERGEJOIN[34][tables = [$hdt$_0, $hdt$_1]] in Stage 'Reducer 2' is a cross product
 PREHOOK: query: SELECT EXISTS (
 SELECT colA, colB, colC, colD, colE FROM t1_multi_delimit
 MINUS

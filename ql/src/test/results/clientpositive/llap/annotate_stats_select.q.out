@@ -107,11 +107,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 3554 Basic stats: COMPLETE Column stats: NONE
           Select Operator
             expressions: bo1 (type: boolean), ti1 (type: tinyint), si1 (type: smallint), i1 (type: int), bi1 (type: bigint), f1 (type: float), d1 (type: double), de1 (type: decimal(10,0)), ts1 (type: timestamp), da1 (type: timestamp), s1 (type: string), vc1 (type: varchar(5)), m1 (type: map<string,string>), l1 (type: array<int>), st1 (type: struct<c1:int,c2:string>)
             outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14
-            Statistics: Num rows: 2 Data size: 3554 Basic stats: COMPLETE Column stats: NONE
             ListSink
 
 PREHOOK: query: analyze table alltypes_orc compute statistics for columns bo1, ti1, si1, i1, bi1, f1, d1, s1, vc1
@@ -142,11 +140,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 3356 Basic stats: COMPLETE Column stats: PARTIAL
           Select Operator
             expressions: bo1 (type: boolean), ti1 (type: tinyint), si1 (type: smallint), i1 (type: int), bi1 (type: bigint), f1 (type: float), d1 (type: double), de1 (type: decimal(10,0)), ts1 (type: timestamp), da1 (type: timestamp), s1 (type: string), vc1 (type: varchar(5)), m1 (type: map<string,string>), l1 (type: array<int>), st1 (type: struct<c1:int,c2:string>)
             outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14
-            Statistics: Num rows: 2 Data size: 3356 Basic stats: COMPLETE Column stats: PARTIAL
             ListSink
 
 PREHOOK: query: explain select bo1 from alltypes_orc
@@ -167,11 +163,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: bo1 (type: boolean)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select i1 as int1 from alltypes_orc
@@ -192,11 +186,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: i1 (type: int)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select s1 from alltypes_orc
@@ -217,11 +209,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 174 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: s1 (type: string)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 174 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select m1 from alltypes_orc
@@ -242,11 +232,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1840 Basic stats: COMPLETE Column stats: NONE
           Select Operator
             expressions: m1 (type: map<string,string>)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 1840 Basic stats: COMPLETE Column stats: NONE
             ListSink
 
 PREHOOK: query: explain select bo1, ti1, si1, i1, bi1, f1, d1,s1 from alltypes_orc
@@ -267,11 +255,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 246 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: bo1 (type: boolean), ti1 (type: tinyint), si1 (type: smallint), i1 (type: int), bi1 (type: bigint), f1 (type: float), d1 (type: double), s1 (type: string)
             outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7
-            Statistics: Num rows: 2 Data size: 246 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select null from alltypes_orc
@@ -292,11 +278,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: null (type: void)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 4 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select 11 from alltypes_orc
@@ -317,11 +301,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 11 (type: int)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select 11L from alltypes_orc
@@ -342,11 +324,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 11L (type: bigint)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 16 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select 11.0 from alltypes_orc
@@ -367,11 +347,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 11 (type: decimal(2,0))
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 224 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select "hello" from alltypes_orc
@@ -392,11 +370,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 'hello' (type: string)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 178 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select cast("hello" as char(5)) from alltypes_orc
@@ -417,11 +393,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 'hello' (type: char(5))
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 178 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select cast("hello" as varchar(5)) from alltypes_orc
@@ -442,11 +416,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 'hello' (type: varchar(5))
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 178 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select unbase64("0xe23") from alltypes_orc
@@ -467,11 +439,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: D317B6 (type: binary)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 96 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select cast("1" as TINYINT), cast("20" as SMALLINT) from alltypes_orc
@@ -492,11 +462,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 1Y (type: tinyint), 20S (type: smallint)
             outputColumnNames: _col0, _col1
-            Statistics: Num rows: 2 Data size: 16 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select cast("1970-12-31 15:59:58.174" as TIMESTAMP) from alltypes_orc
@@ -517,11 +485,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: TIMESTAMP'1970-12-31 15:59:58.174' (type: timestamp)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 80 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select cast("1970-12-31 15:59:58.174" as DATE) from alltypes_orc
@@ -542,11 +508,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: DATE'1970-12-31' (type: date)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 112 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select cast("58.174" as DECIMAL) from alltypes_orc
@@ -567,11 +531,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 58 (type: decimal(10,0))
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 224 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: explain select array(1,2,3) from alltypes_orc
@@ -583,33 +545,19 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@alltypes_orc
 #### A masked pattern was here ####
 STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+  Stage-0 is a root stage
 
 STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: array(1,2,3) (type: array<int>)
-              outputColumnNames: _col0
-              Statistics: Num rows: 2 Data size: 112 Basic stats: COMPLETE Column stats: COMPLETE
-              File Output Operator
-                compressed: false
-                Statistics: Num rows: 2 Data size: 112 Basic stats: COMPLETE Column stats: COMPLETE
-                table:
-                    input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
   Stage: Stage-0
     Fetch Operator
       limit: -1
       Processor Tree:
-        ListSink
+        TableScan
+          alias: alltypes_orc
+          Select Operator
+            expressions: array(1,2,3) (type: array<int>)
+            outputColumnNames: _col0
+            ListSink
 
 PREHOOK: query: explain select str_to_map("a=1 b=2 c=3", " ", "=") from alltypes_orc
 PREHOOK: type: QUERY
@@ -620,33 +568,19 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@alltypes_orc
 #### A masked pattern was here ####
 STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+  Stage-0 is a root stage
 
 STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: str_to_map('a=1 b=2 c=3',' ','=') (type: map<string,string>)
-              outputColumnNames: _col0
-              Statistics: Num rows: 2 Data size: 1508 Basic stats: COMPLETE Column stats: COMPLETE
-              File Output Operator
-                compressed: false
-                Statistics: Num rows: 2 Data size: 1508 Basic stats: COMPLETE Column stats: COMPLETE
-                table:
-                    input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
   Stage: Stage-0
     Fetch Operator
       limit: -1
       Processor Tree:
-        ListSink
+        TableScan
+          alias: alltypes_orc
+          Select Operator
+            expressions: str_to_map('a=1 b=2 c=3',' ','=') (type: map<string,string>)
+            outputColumnNames: _col0
+            ListSink
 
 PREHOOK: query: explain select NAMED_STRUCT("a", 11, "b", 11) from alltypes_orc
 PREHOOK: type: QUERY
@@ -657,33 +591,19 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@alltypes_orc
 #### A masked pattern was here ####
 STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+  Stage-0 is a root stage
 
 STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: named_struct('a',11,'b',11) (type: struct<a:int,b:int>)
-              outputColumnNames: _col0
-              Statistics: Num rows: 2 Data size: 112 Basic stats: COMPLETE Column stats: COMPLETE
-              File Output Operator
-                compressed: false
-                Statistics: Num rows: 2 Data size: 112 Basic stats: COMPLETE Column stats: COMPLETE
-                table:
-                    input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
   Stage: Stage-0
     Fetch Operator
       limit: -1
       Processor Tree:
-        ListSink
+        TableScan
+          alias: alltypes_orc
+          Select Operator
+            expressions: named_struct('a',11,'b',11) (type: struct<a:int,b:int>)
+            outputColumnNames: _col0
+            ListSink
 
 PREHOOK: query: explain select CREATE_UNION(0, "hello") from alltypes_orc
 PREHOOK: type: QUERY
@@ -694,33 +614,19 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@alltypes_orc
 #### A masked pattern was here ####
 STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+  Stage-0 is a root stage
 
 STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: create_union(0,'hello') (type: uniontype<string>)
-              outputColumnNames: _col0
-              Statistics: Num rows: 2 Data size: 250 Basic stats: COMPLETE Column stats: COMPLETE
-              File Output Operator
-                compressed: false
-                Statistics: Num rows: 2 Data size: 250 Basic stats: COMPLETE Column stats: COMPLETE
-                table:
-                    input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
   Stage: Stage-0
     Fetch Operator
       limit: -1
       Processor Tree:
-        ListSink
+        TableScan
+          alias: alltypes_orc
+          Select Operator
+            expressions: create_union(0,'hello') (type: uniontype<string>)
+            outputColumnNames: _col0
+            ListSink
 
 PREHOOK: query: explain select count(*) from alltypes_orc
 PREHOOK: type: QUERY
@@ -776,11 +682,9 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 3356 Basic stats: COMPLETE Column stats: PARTIAL
           Select Operator
             expressions: bo1 (type: boolean), ti1 (type: tinyint), si1 (type: smallint), i1 (type: int), bi1 (type: bigint), f1 (type: float), d1 (type: double), de1 (type: decimal(10,0)), ts1 (type: timestamp), da1 (type: timestamp), s1 (type: string), vc1 (type: varchar(5)), m1 (type: map<string,string>), l1 (type: array<int>), st1 (type: struct<c1:int,c2:string>), 11 (type: int)
             outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15
-            Statistics: Num rows: 2 Data size: 3364 Basic stats: COMPLETE Column stats: PARTIAL
             ListSink
 
 PREHOOK: query: explain select i1 from (select i1 from alltypes_orc limit 10) temp
@@ -801,14 +705,11 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: i1 (type: int)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
             Limit
               Number of rows: 10
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
               ListSink
 
 PREHOOK: query: explain select i1 from (select i1,11 from alltypes_orc limit 10) temp
@@ -829,14 +730,11 @@ STAGE PLANS:
       Processor Tree:
         TableScan
           alias: alltypes_orc
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: i1 (type: int)
             outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
             Limit
               Number of rows: 10
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
               ListSink
 
 PREHOOK: query: explain select i1,"hello" from (select i1,11 from alltypes_orc limit 10) temp
@@ -853,43 +751,53 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: i1 (type: int)
-              outputColumnNames: _col0
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-              Limit
-                Number of rows: 10
-                Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  null sort order: 
-                  sort order: 
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: alltypes_orc
                   Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                  TopN Hash Memory Usage: 0.1
-                  value expressions: _col0 (type: int)
-      Reduce Operator Tree:
-        Select Operator
-          expressions: VALUE._col0 (type: int)
-          outputColumnNames: _col0
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-          Limit
-            Number of rows: 10
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: _col0 (type: int), 'hello' (type: string)
-              outputColumnNames: _col0, _col1
-              Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
-              File Output Operator
-                compressed: false
-                Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
-                table:
-                    input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  Select Operator
+                    expressions: i1 (type: int)
+                    outputColumnNames: _col0
+                    Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                    Limit
+                      Number of rows: 10
+                      Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        null sort order: 
+                        sort order: 
+                        Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                        TopN Hash Memory Usage: 0.1
+                        value expressions: _col0 (type: int)
+            Execution mode: llap
+            LLAP IO: all inputs
+        Reducer 2 
+            Execution mode: llap
+            Reduce Operator Tree:
+              Select Operator
+                expressions: VALUE._col0 (type: int)
+                outputColumnNames: _col0
+                Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                Limit
+                  Number of rows: 10
+                  Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                  Select Operator
+                    expressions: _col0 (type: int), 'hello' (type: string)
+                    outputColumnNames: _col0, _col1
+                    Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
+                    File Output Operator
+                      compressed: false
+                      Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
+                      table:
+                          input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                          output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                          serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 
   Stage: Stage-0
     Fetch Operator
@@ -911,36 +819,46 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: alltypes_orc
+                  Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
+                  Select Operator
+                    Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                    Limit
+                      Number of rows: 10
+                      Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        null sort order: 
+                        sort order: 
+                        Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                        TopN Hash Memory Usage: 0.1
+            Execution mode: llap
+            LLAP IO: all inputs
+        Reducer 2 
+            Execution mode: llap
+            Reduce Operator Tree:
               Limit
                 Number of rows: 10
                 Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  null sort order: 
-                  sort order: 
-                  Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                  TopN Hash Memory Usage: 0.1
-      Reduce Operator Tree:
-        Limit
-          Number of rows: 10
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-          Select Operator
-            expressions: 11 (type: decimal(2,0))
-            outputColumnNames: _col0
-            Statistics: Num rows: 2 Data size: 224 Basic stats: COMPLETE Column stats: COMPLETE
-            File Output Operator
-              compressed: false
-              Statistics: Num rows: 2 Data size: 224 Basic stats: COMPLETE Column stats: COMPLETE
-              table:
-                  input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                  output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                Select Operator
+                  expressions: 11 (type: decimal(2,0))
+                  outputColumnNames: _col0
+                  Statistics: Num rows: 2 Data size: 224 Basic stats: COMPLETE Column stats: COMPLETE
+                  File Output Operator
+                    compressed: false
+                    Statistics: Num rows: 2 Data size: 224 Basic stats: COMPLETE Column stats: COMPLETE
+                    table:
+                        input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                        output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                        serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 
   Stage: Stage-0
     Fetch Operator
@@ -962,43 +880,53 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: i1 (type: int)
-              outputColumnNames: _col0
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-              Limit
-                Number of rows: 10
-                Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  null sort order: 
-                  sort order: 
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: alltypes_orc
                   Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                  TopN Hash Memory Usage: 0.1
-                  value expressions: _col0 (type: int)
-      Reduce Operator Tree:
-        Select Operator
-          expressions: VALUE._col0 (type: int)
-          outputColumnNames: _col0
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-          Limit
-            Number of rows: 10
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: _col0 (type: int), 'hello' (type: string)
-              outputColumnNames: _col0, _col1
-              Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
-              File Output Operator
-                compressed: false
-                Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
-                table:
-                    input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  Select Operator
+                    expressions: i1 (type: int)
+                    outputColumnNames: _col0
+                    Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                    Limit
+                      Number of rows: 10
+                      Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        null sort order: 
+                        sort order: 
+                        Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                        TopN Hash Memory Usage: 0.1
+                        value expressions: _col0 (type: int)
+            Execution mode: llap
+            LLAP IO: all inputs
+        Reducer 2 
+            Execution mode: llap
+            Reduce Operator Tree:
+              Select Operator
+                expressions: VALUE._col0 (type: int)
+                outputColumnNames: _col0
+                Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                Limit
+                  Number of rows: 10
+                  Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                  Select Operator
+                    expressions: _col0 (type: int), 'hello' (type: string)
+                    outputColumnNames: _col0, _col1
+                    Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
+                    File Output Operator
+                      compressed: false
+                      Statistics: Num rows: 2 Data size: 186 Basic stats: COMPLETE Column stats: COMPLETE
+                      table:
+                          input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                          output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                          serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 
   Stage: Stage-0
     Fetch Operator
@@ -1020,36 +948,46 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: alltypes_orc
+                  Statistics: Num rows: 2 Data size: 1686 Basic stats: COMPLETE Column stats: COMPLETE
+                  Select Operator
+                    Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                    Limit
+                      Number of rows: 10
+                      Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        null sort order: 
+                        sort order: 
+                        Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
+                        TopN Hash Memory Usage: 0.1
+            Execution mode: llap
+            LLAP IO: all inputs
+        Reducer 2 
+            Execution mode: llap
+            Reduce Operator Tree:
               Limit
                 Number of rows: 10
                 Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  null sort order: 
-                  sort order: 
-                  Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                  TopN Hash Memory Usage: 0.1
-      Reduce Operator Tree:
-        Limit
-          Number of rows: 10
-          Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-          Select Operator
-            expressions: 'hello' (type: string), 11 (type: decimal(2,0))
-            outputColumnNames: _col0, _col1
-            Statistics: Num rows: 2 Data size: 402 Basic stats: COMPLETE Column stats: COMPLETE
-            File Output Operator
-              compressed: false
-              Statistics: Num rows: 2 Data size: 402 Basic stats: COMPLETE Column stats: COMPLETE
-              table:
-                  input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                  output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                Select Operator
+                  expressions: 'hello' (type: string), 11 (type: decimal(2,0))
+                  outputColumnNames: _col0, _col1
+                  Statistics: Num rows: 2 Data size: 402 Basic stats: COMPLETE Column stats: COMPLETE
+                  File Output Operator
+                    compressed: false
+                    Statistics: Num rows: 2 Data size: 402 Basic stats: COMPLETE Column stats: COMPLETE
+                    table:
+                        input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                        output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                        serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 
   Stage: Stage-0
     Fetch Operator
@@ -1066,36 +1004,21 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@alltypes_orc
 #### A masked pattern was here ####
 STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+  Stage-0 is a root stage
 
 STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-            Filter Operator
-              predicate: bo1 (type: boolean)
-              Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-              Select Operator
-                expressions: bo1 (type: boolean)
-                outputColumnNames: _col0
-                Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                File Output Operator
-                  compressed: false
-                  Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-                  table:
-                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
   Stage: Stage-0
     Fetch Operator
       limit: -1
       Processor Tree:
-        ListSink
+        TableScan
+          alias: alltypes_orc
+          Filter Operator
+            predicate: bo1 (type: boolean)
+            Select Operator
+              expressions: bo1 (type: boolean)
+              outputColumnNames: _col0
+              ListSink
 
 PREHOOK: query: explain select bo1 from alltypes_orc where !bo1
 PREHOOK: type: QUERY
@@ -1106,35 +1029,20 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@alltypes_orc
 #### A masked pattern was here ####
 STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+  Stage-0 is a root stage
 
 STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: alltypes_orc
-            filterExpr: (not bo1) (type: boolean)
-            Statistics: Num rows: 2 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
-            Filter Operator
-              predicate: (not bo1) (type: boolean)
-              Statistics: Num rows: 1 Data size: 4 Basic stats: COMPLETE Column stats: COMPLETE
-              Select Operator
-                expressions: bo1 (type: boolean)
-                outputColumnNames: _col0
-                Statistics: Num rows: 1 Data size: 4 Basic stats: COMPLETE Column stats: COMPLETE
-                File Output Operator
-                  compressed: false
-                  Statistics: Num rows: 1 Data size: 4 Basic stats: COMPLETE Column stats: COMPLETE
-                  table:
-                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
   Stage: Stage-0
     Fetch Operator
       limit: -1
       Processor Tree:
-        ListSink
+        TableScan
+          alias: alltypes_orc
+          filterExpr: (not bo1) (type: boolean)
+          Filter Operator
+            predicate: (not bo1) (type: boolean)
+            Select Operator
+              expressions: bo1 (type: boolean)
+              outputColumnNames: _col0
+              ListSink
 

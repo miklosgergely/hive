@@ -37,7 +37,7 @@ Table:              	tmptable_n11
 #### A masked pattern was here ####
 Partition Parameters:	 	 
 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"key\":\"true\",\"value\":\"true\"}}
-	numFiles            	1                   
+	numFiles            	0                   
 	numRows             	0                   
 	rawDataSize         	0                   
 	totalSize           	0                   

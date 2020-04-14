@@ -69,8 +69,8 @@ CREATE TABLE `esc_special_delimiter`(
 ROW FORMAT SERDE 
   'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' 
 WITH SERDEPROPERTIES ( 
-  'field.delim'='\u0001', 
-  'serialization.format'='\u0001') 
+  'field.delim'='', 
+  'serialization.format'='') 
 STORED AS INPUTFORMAT 
   'org.apache.hadoop.mapred.TextInputFormat' 
 OUTPUTFORMAT 

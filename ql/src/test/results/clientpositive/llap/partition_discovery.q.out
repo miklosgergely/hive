@@ -314,16 +314,12 @@ PREHOOK: Output: default@repairtable_n10
 POSTHOOK: query: MSCK REPAIR TABLE default.repairtable_n10
 POSTHOOK: type: MSCK
 POSTHOOK: Output: default@repairtable_n10
-Partitions not in metastore:	repairtable_n10:p1=a/p2=b	repairtable_n10:p1=c/p2=d
-#### A masked pattern was here ####
 PREHOOK: query: show partitions default.repairtable_n10
 PREHOOK: type: SHOWPARTITIONS
 PREHOOK: Input: default@repairtable_n10
 POSTHOOK: query: show partitions default.repairtable_n10
 POSTHOOK: type: SHOWPARTITIONS
 POSTHOOK: Input: default@repairtable_n10
-p1=a/p2=b
-p1=c/p2=d
 PREHOOK: query: CREATE EXTERNAL TABLE repairtable_n11 LIKE repairtable_n10
 PREHOOK: type: CREATETABLE
 PREHOOK: Output: database:default
@@ -403,12 +399,13 @@ Retention:          	0
 #### A masked pattern was here ####
 Table Type:         	EXTERNAL_TABLE      	 
 Table Parameters:	 	 
+	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
 	EXTERNAL            	TRUE                
 	bucketing_version   	2                   
 	discover.partitions 	false               
 #### A masked pattern was here ####
-	numFiles            	2                   
-	numPartitions       	2                   
+	numFiles            	0                   
+	numPartitions       	0                   
 	numRows             	0                   
 	rawDataSize         	0                   
 	totalSize           	0                   

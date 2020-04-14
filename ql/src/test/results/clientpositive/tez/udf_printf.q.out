@@ -23,56 +23,47 @@ PREHOOK: query: EXPLAIN
 SELECT printf("Hello World %d %s", 100, "days") FROM src tablesample (1 rows)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: EXPLAIN
 SELECT printf("Hello World %d %s", 100, "days") FROM src tablesample (1 rows)
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
-STAGE DEPENDENCIES:
-  Stage-0 is a root stage
+POSTHOOK: Output: hdfs://### HDFS PATH ###
+Plan not optimized by CBO because the statement has unsupported tokens
 
-STAGE PLANS:
-  Stage: Stage-0
-    Fetch Operator
-      limit: -1
-      Processor Tree:
-        TableScan
-          alias: src
-          Row Limit Per Split: 1
-          Statistics: Num rows: 500 Data size: 5312 Basic stats: COMPLETE Column stats: COMPLETE
-          Select Operator
-            expressions: 'Hello World 100 days' (type: string)
-            outputColumnNames: _col0
-            Statistics: Num rows: 500 Data size: 52000 Basic stats: COMPLETE Column stats: COMPLETE
-            ListSink
+Stage-0
+  Fetch Operator
+    limit:-1
+    Select Operator [SEL_1]
+      Output:["_col0"]
+      TableScan [TS_0]
 
 PREHOOK: query: SELECT printf("Hello World %d %s", 100, "days") FROM src tablesample (1 rows)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT printf("Hello World %d %s", 100, "days") FROM src tablesample (1 rows)
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 Hello World 100 days
 PREHOOK: query: SELECT printf("All Type Test: %b, %c, %d, %e, %+10.4f, %g, %h, %s, %a", false, 65, 15000, 12.3400, 27183.240051, 2300.41, 50, "corret", 256.125) FROM src tablesample (1 rows)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT printf("All Type Test: %b, %c, %d, %e, %+10.4f, %g, %h, %s, %a", false, 65, 15000, 12.3400, 27183.240051, 2300.41, 50, "corret", 256.125) FROM src tablesample (1 rows)
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 All Type Test: false, A, 15000, 1.234000e+01, +27183.2401, 2300.41, 32, corret, 0x1.002p8
 PREHOOK: query: SELECT printf("Color %s, String Null: %s, number1 %d, number2 %05d, Integer Null: %d, hex %#x, float %5.2f Double Null: %f\n", "red", NULL, 123456, 89, NULL, 255, 3.14159, NULL) FROM src tablesample (1 rows)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT printf("Color %s, String Null: %s, number1 %d, number2 %05d, Integer Null: %d, hex %#x, float %5.2f Double Null: %f\n", "red", NULL, 123456, 89, NULL, 255, 3.14159, NULL) FROM src tablesample (1 rows)
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 Color red, String Null: null, number1 123456, number2 00089, Integer Null: null, hex 0xff, float  3.14 Double Null: null
 
 PREHOOK: query: create table timestamp_udf (t timestamp)
@@ -99,11 +90,11 @@ POSTHOOK: Lineage: timestamp_udf.t EXPRESSION []
 PREHOOK: query: select printf("timestamp: %s", t) from timestamp_udf
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamp_udf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select printf("timestamp: %s", t) from timestamp_udf
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamp_udf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 timestamp: 2011-05-06 07:08:09.1234567
 PREHOOK: query: drop table timestamp_udf
 PREHOOK: type: DROPTABLE
@@ -156,11 +147,11 @@ POSTHOOK: Lineage: dest1_n110.value SCRIPT [(binay_udf)binay_udf.FieldSchema(nam
 PREHOOK: query: select value, printf("format key: %s", key) from dest1_n110
 PREHOOK: type: QUERY
 PREHOOK: Input: default@dest1_n110
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select value, printf("format key: %s", key) from dest1_n110
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@dest1_n110
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	format key: 61 00 62 63 01 02 01 00
 2	format key: 00 74 65 73 74 00
 3	format key: 01 74 65 73 74 01

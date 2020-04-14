@@ -115,15 +115,15 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@ctas_table
 #### A masked pattern was here ####
 0	3
-10	1
-100	2
 103	2
-104	2
-105	1
 11	1
 111	1
-113	2
 114	1
+119	2
+12	1
+120	1
+128	2
+137	1
 PREHOOK: query: create table ctas_part (key int, value string) partitioned by (modkey bigint)
 PREHOOK: type: CREATETABLE
 PREHOOK: Output: database:default

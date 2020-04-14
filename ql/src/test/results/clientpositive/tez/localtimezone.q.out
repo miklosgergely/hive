@@ -106,11 +106,11 @@ POSTHOOK: Lineage: timestamptz_test.mydate1 SCRIPT []
 PREHOOK: query: select * from `date_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@date_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `date_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@date_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01
 2010-12-31
 2010-12-31
@@ -121,11 +121,11 @@ NULL
 PREHOOK: query: select * from `timestamp_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamp_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123
 2010-12-31 16:01:01.123
 2010-12-31 22:01:01.123
@@ -136,11 +136,11 @@ NULL
 PREHOOK: query: select * from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123 US/Pacific
 2010-12-31 16:01:01.123 US/Pacific
 2010-12-31 22:01:01.123 US/Pacific
@@ -151,11 +151,11 @@ NULL
 PREHOOK: query: select * from `date_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@date_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `date_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@date_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01
 2010-12-31
 2010-12-31
@@ -166,11 +166,11 @@ NULL
 PREHOOK: query: select * from `timestamp_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamp_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123
 2010-12-31 16:01:01.123
 2010-12-31 22:01:01.123
@@ -181,11 +181,11 @@ NULL
 PREHOOK: query: select * from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 10:01:01.123 Europe/Rome
 2011-01-01 01:01:01.123 Europe/Rome
 2011-01-01 07:01:01.123 Europe/Rome
@@ -196,11 +196,11 @@ NULL
 PREHOOK: query: select * from `date_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@date_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `date_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@date_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01
 2010-12-31
 2010-12-31
@@ -211,11 +211,11 @@ NULL
 PREHOOK: query: select * from `timestamp_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamp_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123
 2010-12-31 16:01:01.123
 2010-12-31 22:01:01.123
@@ -226,11 +226,11 @@ NULL
 PREHOOK: query: select * from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123 America/Los_Angeles
 2010-12-31 16:01:01.123 America/Los_Angeles
 2010-12-31 22:01:01.123 America/Los_Angeles
@@ -241,11 +241,11 @@ NULL
 PREHOOK: query: select * from `date_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@date_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `date_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@date_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01
 2010-12-31
 2010-12-31
@@ -256,11 +256,11 @@ NULL
 PREHOOK: query: select * from `timestamp_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamp_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123
 2010-12-31 16:01:01.123
 2010-12-31 22:01:01.123
@@ -271,11 +271,11 @@ NULL
 PREHOOK: query: select * from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 02:01:01.123 GMT-07:00
 2010-12-31 17:01:01.123 GMT-07:00
 2010-12-31 23:01:01.123 GMT-07:00
@@ -286,11 +286,11 @@ NULL
 PREHOOK: query: select extract(year from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(year from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011
 2010
 2010
@@ -301,11 +301,11 @@ NULL
 PREHOOK: query: select extract(quarter from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(quarter from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1
 4
 4
@@ -316,11 +316,11 @@ NULL
 PREHOOK: query: select extract(month from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(month from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1
 12
 12
@@ -331,11 +331,11 @@ NULL
 PREHOOK: query: select extract(day from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(day from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1
 31
 31
@@ -346,11 +346,11 @@ NULL
 PREHOOK: query: select extract(hour from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(hour from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2
 17
 23
@@ -361,11 +361,11 @@ NULL
 PREHOOK: query: select extract(minute from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(minute from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1
 1
 1
@@ -376,11 +376,11 @@ NULL
 PREHOOK: query: select extract(second from `mydate1`) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select extract(second from `mydate1`) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1
 1
 1
@@ -391,11 +391,11 @@ NULL
 PREHOOK: query: select cast(`mydate1` as date) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cast(`mydate1` as date) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01
 2010-12-31
 2010-12-31
@@ -406,11 +406,11 @@ NULL
 PREHOOK: query: select cast(`mydate1` as timestamp with local time zone) from `date_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@date_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cast(`mydate1` as timestamp with local time zone) from `date_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@date_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 00:00:00.0 GMT-07:00
 2010-12-31 00:00:00.0 GMT-07:00
 2010-12-31 00:00:00.0 GMT-07:00
@@ -421,11 +421,11 @@ NULL
 PREHOOK: query: select cast(`mydate1` as timestamp) from `timestamptz_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cast(`mydate1` as timestamp) from `timestamptz_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 02:01:01.123
 2010-12-31 17:01:01.123
 2010-12-31 23:01:01.123
@@ -436,11 +436,11 @@ NULL
 PREHOOK: query: select cast(`mydate1` as timestamp with local time zone) from `timestamp_test`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cast(`mydate1` as timestamp with local time zone) from `timestamp_test`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamp_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2011-01-01 01:01:01.123 GMT-07:00
 2010-12-31 16:01:01.123 GMT-07:00
 2010-12-31 22:01:01.123 GMT-07:00
@@ -451,11 +451,11 @@ NULL
 PREHOOK: query: select `mydate1` from `timestamptz_test` group by `mydate1`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select `mydate1` from `timestamptz_test` group by `mydate1`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2010-12-31 17:01:01.123 GMT-07:00
 2010-12-31 17:01:01.123456789 GMT-07:00
 2010-12-31 23:01:01.123 GMT-07:00
@@ -468,13 +468,13 @@ from `timestamptz_test` a join `timestamptz_test` b
 on a.`mydate1` = b.`mydate1`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select a.`mydate1` as c1, b.`mydate1` as c2
 from `timestamptz_test` a join `timestamptz_test` b
 on a.`mydate1` = b.`mydate1`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2010-12-31 17:01:01.123 GMT-07:00	2010-12-31 17:01:01.123 GMT-07:00
 2010-12-31 17:01:01.123456789 GMT-07:00	2010-12-31 17:01:01.123456789 GMT-07:00
 2010-12-31 23:01:01.123 GMT-07:00	2010-12-31 23:01:01.123 GMT-07:00
@@ -525,13 +525,13 @@ rank() over (partition by `mydate1` order by `price`) as r
 from `timestamptz_test2`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test2
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select `item`, `price`,
 rank() over (partition by `mydate1` order by `price`) as r
 from `timestamptz_test2`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test2
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 cable	0.0	1
 keyboard 1	4.2	1
 hdmi	1.25	1
@@ -547,13 +547,13 @@ rank() over (partition by cast(`mydate1` as date) order by `price`) as r
 from `timestamptz_test2`
 PREHOOK: type: QUERY
 PREHOOK: Input: default@timestamptz_test2
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select `item`, `price`,
 rank() over (partition by cast(`mydate1` as date) order by `price`) as r
 from `timestamptz_test2`
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@timestamptz_test2
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 cable	0.0	1
 hdmi	1.25	1
 keyboard 2	3.9	2

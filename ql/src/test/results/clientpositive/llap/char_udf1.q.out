@@ -40,7 +40,7 @@ from char_udf_1 limit 1
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@char_udf_1
 #### A masked pattern was here ####
-238val_238	238val_238                    	true
+238val_238	238val_238	true
 PREHOOK: query: select
   upper(c2),
   upper(c4),
@@ -57,7 +57,7 @@ from char_udf_1 limit 1
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@char_udf_1
 #### A masked pattern was here ####
-VAL_238	VAL_238             	true
+VAL_238	VAL_238	true
 PREHOOK: query: select
   lower(c2),
   lower(c4),
@@ -74,7 +74,7 @@ from char_udf_1 limit 1
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@char_udf_1
 #### A masked pattern was here ####
-val_238	val_238             	true
+val_238	val_238	true
 PREHOOK: query: select
   ascii(c2),
   ascii(c4),

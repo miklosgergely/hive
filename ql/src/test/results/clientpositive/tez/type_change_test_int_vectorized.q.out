@@ -115,11 +115,11 @@ POSTHOOK: Lineage: testaltcol.ctinyint SCRIPT []
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltCol order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcol
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltCol order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcol
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -146,11 +146,11 @@ POSTHOOK: Lineage: testaltcolt.ctinyint SIMPLE [(testaltcol)testaltcol.FieldSche
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -176,11 +176,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -206,11 +206,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890	12345	123
 2	1	2	3	4
 3	NULL	1234567890	12345	123
@@ -236,11 +236,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345	123
 2	1	2	3	4
 3	NULL	NULL	12345	123
@@ -266,11 +266,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123
 2	1	2	3	4
 3	NULL	NULL	NULL	123
@@ -296,11 +296,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456794E18	1.23456794E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456794E18	1.23456794E9	12345.0	123.0
@@ -326,11 +326,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456789012345677E18	1.23456789E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456789012345677E18	1.23456789E9	12345.0	123.0
@@ -356,11 +356,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789.00	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	1234567890123456789.00	1234567890.00	12345.00	123.00
@@ -386,11 +386,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	1234567890.00	12345.00	123.00
@@ -416,11 +416,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	12345.00	123.00
@@ -446,11 +446,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	123.00
@@ -476,11 +476,11 @@ POSTHOOK: Output: default@testaltcolt
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColT order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolt
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	NULL
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	NULL
@@ -515,11 +515,11 @@ POSTHOOK: Lineage: testaltcolsf.ctinyint SIMPLE [(testaltcol)testaltcol.FieldSch
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -545,11 +545,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -575,11 +575,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890	12345	123
 2	1	2	3	4
 3	NULL	1234567890	12345	123
@@ -605,11 +605,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345	123
 2	1	2	3	4
 3	NULL	NULL	12345	123
@@ -635,11 +635,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123
 2	1	2	3	4
 3	NULL	NULL	NULL	123
@@ -665,11 +665,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456794E18	1.23456794E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456794E18	1.23456794E9	12345.0	123.0
@@ -695,11 +695,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456789012345677E18	1.23456789E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456789012345677E18	1.23456789E9	12345.0	123.0
@@ -725,11 +725,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789.00	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	1234567890123456789.00	1234567890.00	12345.00	123.00
@@ -755,11 +755,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	1234567890.00	12345.00	123.00
@@ -785,11 +785,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	12345.00	123.00
@@ -815,11 +815,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	123.00
@@ -845,11 +845,11 @@ POSTHOOK: Output: default@testaltcolsf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColSF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolsf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	NULL
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	NULL
@@ -884,11 +884,11 @@ POSTHOOK: Lineage: testaltcolrcf.ctinyint SIMPLE [(testaltcol)testaltcol.FieldSc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -914,11 +914,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -944,11 +944,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890	12345	123
 2	1	2	3	4
 3	NULL	1234567890	12345	123
@@ -974,11 +974,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345	123
 2	1	2	3	4
 3	NULL	NULL	12345	123
@@ -1004,11 +1004,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123
 2	1	2	3	4
 3	NULL	NULL	NULL	123
@@ -1034,11 +1034,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456794E18	1.23456794E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456794E18	1.23456794E9	12345.0	123.0
@@ -1064,11 +1064,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456789012345677E18	1.23456789E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456789012345677E18	1.23456789E9	12345.0	123.0
@@ -1094,11 +1094,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789.00	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	1234567890123456789.00	1234567890.00	12345.00	123.00
@@ -1124,11 +1124,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	1234567890.00	12345.00	123.00
@@ -1154,11 +1154,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	12345.00	123.00
@@ -1184,11 +1184,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	123.00
@@ -1214,11 +1214,11 @@ POSTHOOK: Output: default@testaltcolrcf
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColRCF order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolrcf
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	NULL
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	NULL
@@ -1253,11 +1253,11 @@ POSTHOOK: Lineage: testaltcolorc.ctinyint SIMPLE [(testaltcol)testaltcol.FieldSc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -1283,11 +1283,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -1313,11 +1313,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890	12345	123
 2	1	2	3	4
 3	NULL	1234567890	12345	123
@@ -1343,11 +1343,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345	123
 2	1	2	3	4
 3	NULL	NULL	12345	123
@@ -1373,11 +1373,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123
 2	1	2	3	4
 3	NULL	NULL	NULL	123
@@ -1403,11 +1403,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456794E18	1.23456794E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456794E18	1.23456794E9	12345.0	123.0
@@ -1433,11 +1433,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456789012345677E18	1.23456789E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456789012345677E18	1.23456789E9	12345.0	123.0
@@ -1463,11 +1463,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789.00	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	1234567890123456789.00	1234567890.00	12345.00	123.00
@@ -1493,11 +1493,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	1234567890.00	12345.00	123.00
@@ -1523,11 +1523,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	12345.00	123.00
@@ -1553,11 +1553,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	123.00
@@ -1583,11 +1583,11 @@ POSTHOOK: Output: default@testaltcolorc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColORC order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolorc
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	NULL
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	NULL
@@ -1622,11 +1622,11 @@ POSTHOOK: Lineage: testaltcolpde.ctinyint SIMPLE [(testaltcol)testaltcol.FieldSc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -1652,11 +1652,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -1682,11 +1682,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890	12345	123
 2	1	2	3	4
 3	NULL	1234567890	12345	123
@@ -1712,11 +1712,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345	123
 2	1	2	3	4
 3	NULL	NULL	12345	123
@@ -1742,11 +1742,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123
 2	1	2	3	4
 3	NULL	NULL	NULL	123
@@ -1772,11 +1772,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456794E18	1.23456794E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456794E18	1.23456794E9	12345.0	123.0
@@ -1802,11 +1802,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456789012345677E18	1.23456789E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456789012345677E18	1.23456789E9	12345.0	123.0
@@ -1832,11 +1832,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789.00	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	1234567890123456789.00	1234567890.00	12345.00	123.00
@@ -1862,11 +1862,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	1234567890.00	12345.00	123.00
@@ -1892,11 +1892,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	12345.00	123.00
@@ -1922,11 +1922,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	123.00
@@ -1952,11 +1952,11 @@ POSTHOOK: Output: default@testaltcolpde
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDE order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpde
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	NULL
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	NULL
@@ -1993,11 +1993,11 @@ POSTHOOK: Lineage: testaltcolpdd.ctinyint SIMPLE [(testaltcol)testaltcol.FieldSc
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -2023,11 +2023,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789	1234567890	12345	123
 2	1	2	3	4
 3	1234567890123456789	1234567890	12345	123
@@ -2053,11 +2053,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890	12345	123
 2	1	2	3	4
 3	NULL	1234567890	12345	123
@@ -2083,11 +2083,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345	123
 2	1	2	3	4
 3	NULL	NULL	12345	123
@@ -2113,11 +2113,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123
 2	1	2	3	4
 3	NULL	NULL	NULL	123
@@ -2143,11 +2143,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456794E18	1.23456794E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456794E18	1.23456794E9	12345.0	123.0
@@ -2173,11 +2173,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1.23456789012345677E18	1.23456789E9	12345.0	123.0
 2	1.0	2.0	3.0	4.0
 3	1.23456789012345677E18	1.23456789E9	12345.0	123.0
@@ -2203,11 +2203,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	1234567890123456789.00	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	1234567890123456789.00	1234567890.00	12345.00	123.00
@@ -2233,11 +2233,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	1234567890.00	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	1234567890.00	12345.00	123.00
@@ -2263,11 +2263,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	12345.00	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	12345.00	123.00
@@ -2293,11 +2293,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	123.00
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	123.00
@@ -2323,11 +2323,11 @@ POSTHOOK: Output: default@testaltcolpdd
 PREHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 PREHOOK: type: QUERY
 PREHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select cId, cBigInt, cInt, cSmallInt, cTinyint from testAltColPDD order by cId
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@testaltcolpdd
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	NULL	NULL	NULL	NULL
 2	1.00	2.00	3.00	4.00
 3	NULL	NULL	NULL	NULL

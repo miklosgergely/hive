@@ -19,11 +19,9 @@ STAGE PLANS:
         TableScan
           alias: src
           Row Limit Per Split: 1
-          Statistics: Num rows: 500 Data size: 5312 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 1.000000357564167D (type: double)
             outputColumnNames: _col0
-            Statistics: Num rows: 500 Data size: 4000 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: select radians(57.2958) FROM src tablesample (1 rows)
@@ -81,11 +79,9 @@ STAGE PLANS:
         TableScan
           alias: src
           Row Limit Per Split: 1
-          Statistics: Num rows: 500 Data size: 5312 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 1.000000357564167D (type: double)
             outputColumnNames: _col0
-            Statistics: Num rows: 500 Data size: 4000 Basic stats: COMPLETE Column stats: COMPLETE
             ListSink
 
 PREHOOK: query: select radians(57.2958) FROM src tablesample (1 rows)

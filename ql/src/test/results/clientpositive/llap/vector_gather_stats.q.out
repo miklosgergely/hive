@@ -77,23 +77,27 @@ PLAN VECTORIZATION:
 
 STAGE DEPENDENCIES:
   Stage-0 is a root stage
-  Stage-1 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-0
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: cd
-            Statistics: Num rows: 1 Data size: 28 Basic stats: COMPLETE Column stats: NONE
-      Map Vectorization:
-          enabled: true
-          enabledConditionsMet: hive.vectorized.use.vector.serde.deserialize IS true
-          inputFileFormats: org.apache.hadoop.mapred.TextInputFormat
-          notVectorizedReason: TABLESCAN operator: gather stats not supported
-          vectorized: false
+    Tez
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: cd
+            Execution mode: llap
+            LLAP IO: no inputs
+            Map Vectorization:
+                enabled: true
+                enabledConditionsMet: hive.vectorized.use.vector.serde.deserialize IS true
+                inputFileFormats: org.apache.hadoop.mapred.TextInputFormat
+                notVectorizedReason: TABLESCAN operator: gather stats not supported
+                vectorized: false
 
-  Stage: Stage-1
+  Stage: Stage-2
     Stats Work
       Basic Stats Work:
 

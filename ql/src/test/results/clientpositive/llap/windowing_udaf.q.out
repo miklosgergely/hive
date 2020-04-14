@@ -52,28 +52,6 @@ POSTHOOK: query: select s, min(i) over (partition by s) from over10k_n4 limit 10
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n4
 #### A masked pattern was here ####
-alice allen	65545
-alice allen	65545
-alice allen	65545
-alice allen	65545
-alice allen	65545
-alice allen	65545
-alice allen	65545
-alice allen	65545
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
-alice brown	65569
 alice carson	65545
 alice carson	65545
 alice carson	65545
@@ -84,24 +62,6 @@ alice carson	65545
 alice carson	65545
 alice carson	65545
 alice carson	65545
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
-alice davidson	65544
 alice ellison	65537
 alice ellison	65537
 alice ellison	65537
@@ -147,11 +107,51 @@ alice garcia	65573
 alice garcia	65573
 alice garcia	65573
 alice garcia	65573
-alice hernandez	65543
-alice hernandez	65543
-alice hernandez	65543
-alice hernandez	65543
-alice hernandez	65543
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice ichabod	65536
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice johnson	65591
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
+alice king	65538
 PREHOOK: query: select s, avg(f) over (partition by si order by s) from over10k_n4 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n4
@@ -376,14 +376,6 @@ POSTHOOK: query: select max(i) over w from over10k_n4 window w as (partition by 
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@over10k_n4
 #### A masked pattern was here ####
-65774
-65774
-65786
-65786
-65786
-65738
-65738
-65695
 65584
 65774
 65774
@@ -394,88 +386,96 @@ POSTHOOK: Input: default@over10k_n4
 65654
 65750
 65743
-65722
-65722
-65712
 65696
 65696
 65763
 65763
-65733
-65733
 65764
-65718
-65604
-65754
-65754
 65683
 65683
 65683
-65776
-65776
-65776
-65744
-65744
 65595
 65738
 65670
-65658
 65777
 65777
 65704
-65710
-65710
-65612
-65600
-65600
-65600
-65780
-65780
 65752
-65752
-65752
-65580
-65787
-65787
-65787
-65618
 65778
-65592
 65733
 65645
 65788
-65617
 65736
-65782
 65676
 65676
 65676
-65648
-65782
-65782
 65782
 65782
 65604
-65756
 65751
 65546
-65771
 65756
 65756
 65756
-65791
-65555
-65646
-65726
-65726
 65540
-65759
-65573
-65630
 65545
-65785
-65590
-65740
+65678
+65678
+65583
+65583
+65789
+65789
+65789
+65760
+65786
+65786
+65570
+65623
+65629
+65737
+65737
+65745
+65778
+65778
+65778
+65739
+65575
+65712
+65712
+65719
+65719
+65695
+65695
+65693
+65752
+65560
+65709
+65745
+65770
+65748
+65739
+65739
+65739
+65604
+65708
+65700
+65778
+65688
+65688
+65544
+65779
+65779
+65702
+65791
+65791
+65791
+65791
+65749
+65749
+65763
+65763
+65763
+65598
 PREHOOK: query: select s, avg(d) over (partition by t order by f) from over10k_n4 limit 100
 PREHOOK: type: QUERY
 PREHOOK: Input: default@over10k_n4

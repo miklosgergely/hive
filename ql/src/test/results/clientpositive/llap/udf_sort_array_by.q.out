@@ -319,12 +319,12 @@ POSTHOOK: query: SELECT a_struct FROM sort_array_by_table_order LATERAL VIEW exp
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@sort_array_by_table_order
 #### A masked pattern was here ####
-{"name":"Hary","age":87}
 {"name":"Hary","age":21}
-{"name":"Boo","age":22}
+{"name":"Hary","age":87}
 {"name":"Boo","age":21}
-{"name":"Able","age":23}
+{"name":"Boo","age":22}
 {"name":"Able","age":28}
+{"name":"Able","age":23}
 PREHOOK: query: SELECT a_struct FROM sort_array_by_table_order LATERAL VIEW explode(sort_array_by(a_struct_array, 'name', 'DESC')) structTable AS a_struct
 PREHOOK: type: QUERY
 PREHOOK: Input: default@sort_array_by_table_order

@@ -1,4 +1,4 @@
-Warning: Shuffle Join JOIN[8][tables = [src1, src2]] in Stage 'Stage-1:MAPRED' is a cross product
+Warning: Shuffle Join MERGEJOIN[21][tables = [src1, src2]] in Stage 'Reducer 2' is a cross product
 PREHOOK: query: SELECT src1.key as k1, src1.value as v1, 
        src2.key as k2, src2.value as v2 FROM 
   (SELECT * FROM src WHERE src.key < 10) src1 
@@ -39,16 +39,16 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
 #### A masked pattern was here ####
 src.key	_c1
-0	0.0
 10	10.0
 100	200.0
-103	206.0
 104	208.0
 105	105.0
-11	11.0
-111	111.0
 113	226.0
-114	114.0
+116	116.0
+118	236.0
+125	125.0
+129	258.0
+145	145.0
 PREHOOK: query: use default
 PREHOOK: type: SWITCHDATABASE
 PREHOOK: Input: database:default

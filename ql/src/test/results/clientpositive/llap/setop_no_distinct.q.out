@@ -44,8 +44,8 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@a_n1
 POSTHOOK: Input: default@b_n1
 #### A masked pattern was here ####
-1	2
 2	3
+1	2
 PREHOOK: query: (select * from b_n1 intersect (select * from a_n1)) intersect select * from b_n1
 PREHOOK: type: QUERY
 PREHOOK: Input: default@a_n1
@@ -56,8 +56,8 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@a_n1
 POSTHOOK: Input: default@b_n1
 #### A masked pattern was here ####
-1	2
 2	3
+1	2
 PREHOOK: query: select * from b_n1 intersect all select * from a_n1 intersect select * from b_n1
 PREHOOK: type: QUERY
 PREHOOK: Input: default@a_n1
@@ -68,8 +68,8 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@a_n1
 POSTHOOK: Input: default@b_n1
 #### A masked pattern was here ####
-1	2
 2	3
+1	2
 PREHOOK: query: (select * from b_n1) intersect all ((select * from a_n1) intersect select * from b_n1)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@a_n1
@@ -80,8 +80,8 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@a_n1
 POSTHOOK: Input: default@b_n1
 #### A masked pattern was here ####
-1	2
 2	3
+1	2
 PREHOOK: query: select * from (select a_n1.key, b_n1.value from a_n1 join b_n1 on a_n1.key=b_n1.key)sub1 
 intersect 
 select * from (select a_n1.key, b_n1.value from a_n1 join b_n1 on a_n1.key=b_n1.key)sub2
@@ -96,8 +96,8 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@a_n1
 POSTHOOK: Input: default@b_n1
 #### A masked pattern was here ####
-1	2
 2	3
+1	2
 PREHOOK: query: drop table a_n1
 PREHOOK: type: DROPTABLE
 PREHOOK: Input: default@a_n1
@@ -192,10 +192,10 @@ POSTHOOK: type: QUERY
 POSTHOOK: Input: default@a_n1
 POSTHOOK: Input: default@b_n1
 #### A masked pattern was here ####
-0
-0
 2
 2
+0
+0
 NULL
 NULL
 PREHOOK: query: select * from a_n1 minus select * from b_n1 minus (select * from a_n1 minus select * from b_n1)

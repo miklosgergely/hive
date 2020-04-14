@@ -53,117 +53,121 @@ POSTHOOK: Output: default@analyze_srcpart_n3@ds=2008-04-08/hr=11
 POSTHOOK: Output: default@analyze_srcpart_n3@ds=2008-04-08/hr=12
 STAGE DEPENDENCIES:
   Stage-0 is a root stage
-  Stage-1 depends on stages: Stage-0
+  Stage-2 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-0
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: analyze_srcpart_n3
-            Statistics: Num rows: 392 Data size: 235616 Basic stats: PARTIAL Column stats: NONE
-            Statistics Aggregation Key Prefix: default.analyze_srcpart_n3/
-            GatherStats: true
-      Path -> Alias:
+    Tez
 #### A masked pattern was here ####
-      Path -> Partition:
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: analyze_srcpart_n3
+                  Statistics Aggregation Key Prefix: default.analyze_srcpart_n3/
+                  GatherStats: true
+            Execution mode: llap
+            LLAP IO: no inputs
+            Path -> Alias:
 #### A masked pattern was here ####
-          Partition
-            base file name: hr=11
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            partition values:
-              ds 2008-04-08
-              hr 11
-            properties:
-              bucket_count -1
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 'default','default'
-              columns.types string:string
+            Path -> Partition:
 #### A masked pattern was here ####
-              name default.analyze_srcpart_n3
-              numFiles 1
-              partition_columns ds/hr
-              partition_columns.types string:string
-              serialization.ddl struct analyze_srcpart_n3 { string key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 5812
+                Partition
+                  base file name: hr=11
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  partition values:
+                    ds 2008-04-08
+                    hr 11
+                  properties:
+                    bucket_count -1
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 'default','default'
+                    columns.types string:string
 #### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                bucket_count -1
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 'default','default'
-                columns.types string:string
+                    name default.analyze_srcpart_n3
+                    numFiles 1
+                    partition_columns ds/hr
+                    partition_columns.types string:string
+                    serialization.ddl struct analyze_srcpart_n3 { string key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 5812
 #### A masked pattern was here ####
-                name default.analyze_srcpart_n3
-                partition_columns ds/hr
-                partition_columns.types string:string
-                serialization.ddl struct analyze_srcpart_n3 { string key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      bucket_count -1
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 'default','default'
+                      columns.types string:string
 #### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.analyze_srcpart_n3
-            name: default.analyze_srcpart_n3
+                      name default.analyze_srcpart_n3
+                      partition_columns ds/hr
+                      partition_columns.types string:string
+                      serialization.ddl struct analyze_srcpart_n3 { string key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 #### A masked pattern was here ####
-          Partition
-            base file name: hr=12
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            partition values:
-              ds 2008-04-08
-              hr 12
-            properties:
-              bucket_count -1
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 'default','default'
-              columns.types string:string
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.analyze_srcpart_n3
+                  name: default.analyze_srcpart_n3
 #### A masked pattern was here ####
-              name default.analyze_srcpart_n3
-              numFiles 1
-              partition_columns ds/hr
-              partition_columns.types string:string
-              serialization.ddl struct analyze_srcpart_n3 { string key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 5812
+                Partition
+                  base file name: hr=12
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  partition values:
+                    ds 2008-04-08
+                    hr 12
+                  properties:
+                    bucket_count -1
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 'default','default'
+                    columns.types string:string
 #### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                bucket_count -1
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 'default','default'
-                columns.types string:string
+                    name default.analyze_srcpart_n3
+                    numFiles 1
+                    partition_columns ds/hr
+                    partition_columns.types string:string
+                    serialization.ddl struct analyze_srcpart_n3 { string key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 5812
 #### A masked pattern was here ####
-                name default.analyze_srcpart_n3
-                partition_columns ds/hr
-                partition_columns.types string:string
-                serialization.ddl struct analyze_srcpart_n3 { string key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      bucket_count -1
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 'default','default'
+                      columns.types string:string
 #### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.analyze_srcpart_n3
-            name: default.analyze_srcpart_n3
-      Truncated Path -> Alias:
-        /analyze_srcpart_n3/ds=2008-04-08/hr=11 [analyze_srcpart_n3]
-        /analyze_srcpart_n3/ds=2008-04-08/hr=12 [analyze_srcpart_n3]
+                      name default.analyze_srcpart_n3
+                      partition_columns ds/hr
+                      partition_columns.types string:string
+                      serialization.ddl struct analyze_srcpart_n3 { string key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.analyze_srcpart_n3
+                  name: default.analyze_srcpart_n3
+            Truncated Path -> Alias:
+              /analyze_srcpart_n3/ds=2008-04-08/hr=11 [analyze_srcpart_n3]
+              /analyze_srcpart_n3/ds=2008-04-08/hr=12 [analyze_srcpart_n3]
 
-  Stage: Stage-1
+  Stage: Stage-2
     Stats Work
       Basic Stats Work:
           Stats Aggregation Key Prefix: default.analyze_srcpart_n3/

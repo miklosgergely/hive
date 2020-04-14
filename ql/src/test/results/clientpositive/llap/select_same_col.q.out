@@ -22,16 +22,16 @@ POSTHOOK: query: select cast(value as binary), value from srclimit
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@srclimit
 #### A masked pattern was here ####
-val_484	val_484
-val_98	val_98
-val_278	val_278
-val_255	val_255
-val_409	val_409
-val_165	val_165
-val_27	val_27
-val_311	val_311
-val_86	val_86
 val_238	val_238
+val_86	val_86
+val_311	val_311
+val_27	val_27
+val_165	val_165
+val_409	val_409
+val_255	val_255
+val_278	val_278
+val_98	val_98
+val_484	val_484
 PREHOOK: query: select cast(value as binary), value from srclimit order by value
 PREHOOK: type: QUERY
 PREHOOK: Input: default@srclimit
@@ -84,16 +84,16 @@ POSTHOOK: query: select *, key, value from srclimit
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@srclimit
 #### A masked pattern was here ####
-484	val_484	484	val_484
-98	val_98	98	val_98
-278	val_278	278	val_278
-255	val_255	255	val_255
-409	val_409	409	val_409
-165	val_165	165	val_165
-27	val_27	27	val_27
-311	val_311	311	val_311
-86	val_86	86	val_86
 238	val_238	238	val_238
+86	val_86	86	val_86
+311	val_311	311	val_311
+27	val_27	27	val_27
+165	val_165	165	val_165
+409	val_409	409	val_409
+255	val_255	255	val_255
+278	val_278	278	val_278
+98	val_98	98	val_98
+484	val_484	484	val_484
 PREHOOK: query: select * from (select *, key, value from srclimit) t
 PREHOOK: type: QUERY
 PREHOOK: Input: default@srclimit
@@ -102,16 +102,16 @@ POSTHOOK: query: select * from (select *, key, value from srclimit) t
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@srclimit
 #### A masked pattern was here ####
-484	val_484	484	val_484
-98	val_98	98	val_98
-278	val_278	278	val_278
-255	val_255	255	val_255
-409	val_409	409	val_409
-165	val_165	165	val_165
-27	val_27	27	val_27
-311	val_311	311	val_311
-86	val_86	86	val_86
 238	val_238	238	val_238
+86	val_86	86	val_86
+311	val_311	311	val_311
+27	val_27	27	val_27
+165	val_165	165	val_165
+409	val_409	409	val_409
+255	val_255	255	val_255
+278	val_278	278	val_278
+98	val_98	98	val_98
+484	val_484	484	val_484
 PREHOOK: query: drop table srclimit
 PREHOOK: type: DROPTABLE
 PREHOOK: Input: default@srclimit

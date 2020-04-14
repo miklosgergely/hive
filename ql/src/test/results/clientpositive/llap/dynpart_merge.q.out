@@ -80,8 +80,8 @@ POSTHOOK: Input: default@tdp@dataint=20150316/hour=16/req=reqA
 POSTHOOK: Input: default@tdp@dataint=20150316/hour=16/req=reqB
 POSTHOOK: Input: default@tdp@dataint=20150316/hour=16/req=reqD
 #### A masked pattern was here ####
-clusterIdA	cacheId1	20150316	16	reqB
 clusterIdA	cacheId1	20150316	16	reqA
+clusterIdA	cacheId1	20150316	16	reqB
 clusterIdB	cacheId2	20150316	16	reqB
 clusterIdC	cacheId3	20150316	16	reqA
 clusterIdD	cacheId4	20150316	16	reqD

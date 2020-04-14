@@ -95,5 +95,5 @@ POSTHOOK: query: SELECT * FROM new_table_temp
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@new_table_temp
 #### A masked pattern was here ####
-2	{"country":1,"state":2}	[]	20150101
 1	{"country":1,"state":1}	[2,3]	20150101
+2	{"country":1,"state":2}	[]	20150101

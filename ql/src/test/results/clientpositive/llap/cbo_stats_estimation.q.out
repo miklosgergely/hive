@@ -31,113 +31,122 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: claims
-            filterExpr: (typ_c = 3) (type: boolean)
-            Statistics: Num rows: 1154941534 Data size: 1135307527922 Basic stats: COMPLETE Column stats: NONE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: false
-              predicate: (typ_c = 3) (type: boolean)
-              Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
-              Select Operator
-                Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
-                Group By Operator
-                  aggregations: count()
-                  minReductionHashAggr: 0.99
-                  mode: hash
-                  outputColumnNames: _col0
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: claims
+                  filterExpr: (typ_c = 3) (type: boolean)
+                  Statistics: Num rows: 1154941534 Data size: 1135307527922 Basic stats: COMPLETE Column stats: NONE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: false
+                    predicate: (typ_c = 3) (type: boolean)
+                    Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
+                    Select Operator
+                      Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
+                      Group By Operator
+                        aggregations: count()
+                        minReductionHashAggr: 0.99
+                        mode: hash
+                        outputColumnNames: _col0
+                        Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
+                        Reduce Output Operator
+                          null sort order: 
+                          sort order: 
+                          Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
+                          tag: -1
+                          value expressions: _col0 (type: bigint)
+                          auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: claims
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    bucket_count -1
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns claim_rec_id,claim_invoice_num,typ_c
+                    columns.comments 
+                    columns.types bigint:string:int
+#### A masked pattern was here ####
+                    name default.claims
+                    numFiles 0
+                    numRows 1154941534
+                    rawDataSize 1135307527922
+                    serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 0
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      bucket_count -1
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns claim_rec_id,claim_invoice_num,typ_c
+                      columns.comments 
+                      columns.types bigint:string:int
+#### A masked pattern was here ####
+                      name default.claims
+                      numFiles 0
+                      numRows 1154941534
+                      rawDataSize 1135307527922
+                      serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 0
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.claims
+                  name: default.claims
+            Truncated Path -> Alias:
+              /claims [claims]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: count(VALUE._col0)
+                mode: mergepartial
+                outputColumnNames: _col0
+                Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-                  Reduce Output Operator
-                    null sort order: 
-                    sort order: 
-                    Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-                    tag: -1
-                    value expressions: _col0 (type: bigint)
-                    auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: claims
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              bucket_count -1
-              bucketing_version 2
-              column.name.delimiter ,
-              columns claim_rec_id,claim_invoice_num,typ_c
-              columns.comments 
-              columns.types bigint:string:int
-#### A masked pattern was here ####
-              name default.claims
-              numFiles 0
-              numRows 1154941534
-              rawDataSize 1135307527922
-              serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 0
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                bucket_count -1
-                bucketing_version 2
-                column.name.delimiter ,
-                columns claim_rec_id,claim_invoice_num,typ_c
-                columns.comments 
-                columns.types bigint:string:int
-#### A masked pattern was here ####
-                name default.claims
-                numFiles 0
-                numRows 1154941534
-                rawDataSize 1135307527922
-                serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 0
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.claims
-            name: default.claims
-      Truncated Path -> Alias:
-        /claims [claims]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Group By Operator
-          aggregations: count(VALUE._col0)
-          mode: mergepartial
-          outputColumnNames: _col0
-          Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0
-                  columns.types bigint
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0
+                        columns.types bigint
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -162,113 +171,122 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: claims
-            filterExpr: (typ_c = 3) (type: boolean)
-            Statistics: Num rows: 1154941534 Data size: 1135307527922 Basic stats: COMPLETE Column stats: NONE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: false
-              predicate: (typ_c = 3) (type: boolean)
-              Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
-              Select Operator
-                Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
-                Group By Operator
-                  aggregations: count()
-                  minReductionHashAggr: 0.99
-                  mode: hash
-                  outputColumnNames: _col0
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: claims
+                  filterExpr: (typ_c = 3) (type: boolean)
+                  Statistics: Num rows: 1154941534 Data size: 1135307527922 Basic stats: COMPLETE Column stats: NONE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: false
+                    predicate: (typ_c = 3) (type: boolean)
+                    Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
+                    Select Operator
+                      Statistics: Num rows: 577470767 Data size: 567653763961 Basic stats: COMPLETE Column stats: NONE
+                      Group By Operator
+                        aggregations: count()
+                        minReductionHashAggr: 0.99
+                        mode: hash
+                        outputColumnNames: _col0
+                        Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
+                        Reduce Output Operator
+                          null sort order: 
+                          sort order: 
+                          Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
+                          tag: -1
+                          value expressions: _col0 (type: bigint)
+                          auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: claims
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    bucket_count -1
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns claim_rec_id,claim_invoice_num,typ_c
+                    columns.comments 
+                    columns.types bigint:string:int
+#### A masked pattern was here ####
+                    name default.claims
+                    numFiles 0
+                    numRows 1154941534
+                    rawDataSize 1135307527922
+                    serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 0
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      bucket_count -1
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns claim_rec_id,claim_invoice_num,typ_c
+                      columns.comments 
+                      columns.types bigint:string:int
+#### A masked pattern was here ####
+                      name default.claims
+                      numFiles 0
+                      numRows 1154941534
+                      rawDataSize 1135307527922
+                      serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 0
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.claims
+                  name: default.claims
+            Truncated Path -> Alias:
+              /claims [claims]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: count(VALUE._col0)
+                mode: mergepartial
+                outputColumnNames: _col0
+                Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-                  Reduce Output Operator
-                    null sort order: 
-                    sort order: 
-                    Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-                    tag: -1
-                    value expressions: _col0 (type: bigint)
-                    auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: claims
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              bucket_count -1
-              bucketing_version 2
-              column.name.delimiter ,
-              columns claim_rec_id,claim_invoice_num,typ_c
-              columns.comments 
-              columns.types bigint:string:int
-#### A masked pattern was here ####
-              name default.claims
-              numFiles 0
-              numRows 1154941534
-              rawDataSize 1135307527922
-              serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 0
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                bucket_count -1
-                bucketing_version 2
-                column.name.delimiter ,
-                columns claim_rec_id,claim_invoice_num,typ_c
-                columns.comments 
-                columns.types bigint:string:int
-#### A masked pattern was here ####
-                name default.claims
-                numFiles 0
-                numRows 1154941534
-                rawDataSize 1135307527922
-                serialization.ddl struct claims { i64 claim_rec_id, string claim_invoice_num, i32 typ_c}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 0
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.claims
-            name: default.claims
-      Truncated Path -> Alias:
-        /claims [claims]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Group By Operator
-          aggregations: count(VALUE._col0)
-          mode: mergepartial
-          outputColumnNames: _col0
-          Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: NONE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0
-                  columns.types bigint
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0
+                        columns.types bigint
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator

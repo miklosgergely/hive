@@ -23,11 +23,11 @@ POSTHOOK: Lineage: tmp_tmp_n0.value SCRIPT [(src)src.FieldSchema(name:key, type:
 PREHOOK: query: select * from tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1	2	NULL
 1	2	NULL
 1
@@ -71,11 +71,11 @@ POSTHOOK: Lineage: tmp_tmp_n0.value SCRIPT [(src)src.FieldSchema(name:key, type:
 PREHOOK: query: select * from tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\n2	NULL
 1\n2	NULL
 1\n2	NULL
@@ -85,12 +85,12 @@ PREHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\n2	NULL
 1\n2	NULL
 1\n2	NULL
@@ -113,11 +113,11 @@ POSTHOOK: Lineage: tmp_tmp_n0.value SCRIPT [(src)src.FieldSchema(name:key, type:
 PREHOOK: query: select * from tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\r2	NULL
 1\r2	NULL
 1\r2	NULL
@@ -127,12 +127,12 @@ PREHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\r2	NULL
 1\r2	NULL
 1\r2	NULL
@@ -155,11 +155,11 @@ POSTHOOK: Lineage: tmp_tmp_n0.value SCRIPT [(src)src.FieldSchema(name:key, type:
 PREHOOK: query: select * from tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\t2	NULL
 1\t2	NULL
 1\t2	NULL
@@ -169,12 +169,12 @@ PREHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\t2	NULL
 1\t2	NULL
 1\t2	NULL
@@ -197,11 +197,11 @@ POSTHOOK: Lineage: tmp_tmp_n0.value SCRIPT [(src)src.FieldSchema(name:key, type:
 PREHOOK: query: select * from tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select * from tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\	2	NULL
 1\	2	NULL
 1\	2	NULL
@@ -211,12 +211,12 @@ PREHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 PREHOOK: type: QUERY
 PREHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT TRANSFORM(key, value) USING
 'cat' AS (key, value) FROM tmp_tmp_n0
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@tmp_tmp_n0
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1\	2	NULL
 1\	2	NULL
 1\	2	NULL
@@ -225,18 +225,18 @@ POSTHOOK: Input: default@tmp_tmp_n0
 PREHOOK: query: SELECT key FROM (SELECT TRANSFORM ('a\tb', 'c') USING 'cat' AS (key, value) FROM src limit 1)a ORDER BY key ASC
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT key FROM (SELECT TRANSFORM ('a\tb', 'c') USING 'cat' AS (key, value) FROM src limit 1)a ORDER BY key ASC
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 a	b
 PREHOOK: query: SELECT value FROM (SELECT TRANSFORM ('a\tb', 'c') USING 'cat' AS (key, value) FROM src limit 1)a ORDER BY value ASC
 PREHOOK: type: QUERY
 PREHOOK: Input: default@src
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT value FROM (SELECT TRANSFORM ('a\tb', 'c') USING 'cat' AS (key, value) FROM src limit 1)a ORDER BY value ASC
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@src
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 c

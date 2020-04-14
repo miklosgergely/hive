@@ -77,8 +77,8 @@ POSTHOOK: Input: default@varchar_serde_regex
 #### A masked pattern was here ####
 val_0	3
 val_1	2
-val_10	1
 val_100	2
+val_10	1
 val_101	2
 PREHOOK: query: create table  varchar_serde_lb (
   key varchar(10),
@@ -137,8 +137,8 @@ POSTHOOK: Input: default@varchar_serde_lb
 #### A masked pattern was here ####
 val_0	3
 val_1	2
-val_10	1
 val_100	2
+val_10	1
 val_101	2
 PREHOOK: query: create table  varchar_serde_ls (
   key varchar(10),
@@ -197,9 +197,9 @@ POSTHOOK: Input: default@varchar_serde_ls
 #### A masked pattern was here ####
 val_0	3
 val_1	2
-val_10	1
 val_100	2
-val_101	2
+val_11	1
+val_111	1
 PREHOOK: query: create table  varchar_serde_c (
   key varchar(10),
   value varchar(20)
@@ -257,8 +257,8 @@ POSTHOOK: Input: default@varchar_serde_c
 #### A masked pattern was here ####
 val_0	3
 val_1	2
-val_10	1
 val_100	2
+val_10	1
 val_101	2
 PREHOOK: query: create table varchar_serde_lbc (
   key varchar(10),
@@ -317,8 +317,8 @@ POSTHOOK: Input: default@varchar_serde_lbc
 #### A masked pattern was here ####
 val_0	3
 val_1	2
-val_10	1
 val_100	2
+val_10	1
 val_101	2
 PREHOOK: query: create table varchar_serde_orc (
   key varchar(10),
@@ -377,9 +377,9 @@ POSTHOOK: Input: default@varchar_serde_orc
 #### A masked pattern was here ####
 val_0	3
 val_1	2
-val_10	1
 val_100	2
-val_101	2
+val_11	1
+val_111	1
 PREHOOK: query: drop table if exists varchar_serde_regex
 PREHOOK: type: DROPTABLE
 PREHOOK: Input: default@varchar_serde_regex

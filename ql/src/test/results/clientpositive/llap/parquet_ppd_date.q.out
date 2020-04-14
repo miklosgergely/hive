@@ -31,6 +31,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da='1970-02-20'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -39,6 +44,11 @@ POSTHOOK: query: select * from newtypestbl_n2 where da='1970-02-20'
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
@@ -57,14 +67,6 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-PREHOOK: query: select * from newtypestbl_n2 where da=cast('1970-02-20' as date)
-PREHOOK: type: QUERY
-PREHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
-POSTHOOK: query: select * from newtypestbl_n2 where da=cast('1970-02-20' as date)
-POSTHOOK: type: QUERY
-POSTHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
@@ -83,6 +85,29 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+PREHOOK: query: select * from newtypestbl_n2 where da=cast('1970-02-20' as date)
+PREHOOK: type: QUERY
+PREHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+POSTHOOK: query: select * from newtypestbl_n2 where da=cast('1970-02-20' as date)
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da=cast('1970-02-20' as varchar(20))
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -96,6 +121,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da=cast('1970-02-20' as varchar(20))
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -109,6 +139,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da!='1970-02-20'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -117,11 +152,6 @@ POSTHOOK: query: select * from newtypestbl_n2 where da!='1970-02-20'
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
 PREHOOK: query: select * from newtypestbl_n2 where da!='1970-02-20'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -130,11 +160,6 @@ POSTHOOK: query: select * from newtypestbl_n2 where da!='1970-02-20'
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
 PREHOOK: query: select * from newtypestbl_n2 where da<'1970-02-27'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -148,6 +173,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da<'1970-02-27'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -156,6 +186,11 @@ POSTHOOK: query: select * from newtypestbl_n2 where da<'1970-02-27'
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
@@ -174,11 +209,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da<'1970-02-29' sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -192,11 +227,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da<'1970-02-15'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -226,6 +261,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da<='1970-02-20'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -239,6 +279,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da<='1970-02-27' sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -252,11 +297,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da<='1970-02-27' sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -270,11 +315,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-21' as date), cast('1970-02-27' as date))
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -283,11 +328,6 @@ POSTHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-21' as 
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
 PREHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-21' as date), cast('1970-02-27' as date))
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -296,11 +336,6 @@ POSTHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-21' as 
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
 PREHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-20' as date), cast('1970-02-27' as date)) sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -314,11 +349,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-20' as date), cast('1970-02-27' as date)) sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -332,11 +367,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da in (cast('1970-02-21' as date), cast('1970-02-22' as date))
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -366,6 +401,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da between '1970-02-19' and '1970-02-22'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -379,6 +419,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da between '1970-02-19' and '1970-02-28' sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -392,11 +437,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da between '1970-02-19' and '1970-02-28' sort by c
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -410,11 +455,11 @@ apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
 apple     	bee	0.220	1970-02-20
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
-hello     	world	11.220	1970-02-27
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
+apple     	bee	0.220	1970-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da between '1970-02-18' and '1970-02-19'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -456,40 +501,6 @@ apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
-PREHOOK: query: select * from newtypestbl_n2 where da='999-02-20'
-PREHOOK: type: QUERY
-PREHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
-POSTHOOK: query: select * from newtypestbl_n2 where da='999-02-20'
-POSTHOOK: type: QUERY
-POSTHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-PREHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
-PREHOOK: type: QUERY
-PREHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
-POSTHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
-POSTHOOK: type: QUERY
-POSTHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-apple     	bee	0.220	0999-02-20
-PREHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
-PREHOOK: type: QUERY
-PREHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
-POSTHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
-POSTHOOK: type: QUERY
-POSTHOOK: Input: default@newtypestbl_n2
-#### A masked pattern was here ####
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
@@ -508,6 +519,47 @@ apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+PREHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
+PREHOOK: type: QUERY
+PREHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+POSTHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+PREHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
+PREHOOK: type: QUERY
+PREHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+POSTHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da='999-02-20'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -521,6 +573,29 @@ apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+PREHOOK: query: select * from newtypestbl_n2 where da='999-02-20'
+PREHOOK: type: QUERY
+PREHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+POSTHOOK: query: select * from newtypestbl_n2 where da='999-02-20'
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@newtypestbl_n2
+#### A masked pattern was here ####
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -534,6 +609,11 @@ apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
 PREHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
 PREHOOK: type: QUERY
 PREHOOK: Input: default@newtypestbl_n2
@@ -542,6 +622,11 @@ POSTHOOK: query: select * from newtypestbl_n2 where da=cast('999-02-20' as date)
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@newtypestbl_n2
 #### A masked pattern was here ####
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
+apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20
 apple     	bee	0.220	0999-02-20

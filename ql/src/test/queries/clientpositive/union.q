@@ -18,4 +18,4 @@ FROM (
 ) unioninput
 INSERT OVERWRITE DIRECTORY 'target/warehouse/union.out' SELECT unioninput.*;
 
-dfs -cat ${system:test.warehouse.dir}/union.out/*;
+dfs -cat ${system:test.warehouse.dir}/union.out/*/*;

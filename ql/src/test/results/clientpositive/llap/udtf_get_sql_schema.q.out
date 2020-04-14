@@ -53,18 +53,14 @@ STAGE PLANS:
         TableScan
           alias: _dummy_table
           Row Limit Per Split: 1
-          Statistics: Num rows: 1 Data size: 10 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 'select * from t1' (type: string)
             outputColumnNames: _col0
-            Statistics: Num rows: 1 Data size: 100 Basic stats: COMPLETE Column stats: COMPLETE
             UDTF Operator
-              Statistics: Num rows: 1 Data size: 100 Basic stats: COMPLETE Column stats: COMPLETE
               function name: get_sql_schema
               Select Operator
                 expressions: col_name (type: binary), col_type (type: binary)
                 outputColumnNames: _col0, _col1
-                Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
                 ListSink
 
 PREHOOK: query: select get_sql_schema('select * from t1')
@@ -126,18 +122,14 @@ STAGE PLANS:
         TableScan
           alias: _dummy_table
           Row Limit Per Split: 1
-          Statistics: Num rows: 1 Data size: 10 Basic stats: COMPLETE Column stats: COMPLETE
           Select Operator
             expressions: 'select * from t2' (type: string)
             outputColumnNames: _col0
-            Statistics: Num rows: 1 Data size: 100 Basic stats: COMPLETE Column stats: COMPLETE
             UDTF Operator
-              Statistics: Num rows: 1 Data size: 100 Basic stats: COMPLETE Column stats: COMPLETE
               function name: get_sql_schema
               Select Operator
                 expressions: col_name (type: binary), col_type (type: binary)
                 outputColumnNames: _col0, _col1
-                Statistics: Num rows: 1 Data size: 8 Basic stats: COMPLETE Column stats: COMPLETE
                 ListSink
 
 PREHOOK: query: select get_sql_schema('select * from t2')

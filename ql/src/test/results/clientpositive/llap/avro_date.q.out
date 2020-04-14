@@ -93,8 +93,8 @@ POSTHOOK: Input: default@avro_date@p1=2/p2=2014-09-26
 1411-02-21	1
 1947-02-11	1
 2012-02-21	1
-2014-02-11	1
 8200-02-11	1
+2014-02-11	1
 PREHOOK: query: SELECT * FROM avro_date WHERE d!='1947-02-11'
 PREHOOK: type: QUERY
 PREHOOK: Input: default@avro_date

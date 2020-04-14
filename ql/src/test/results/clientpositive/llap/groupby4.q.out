@@ -22,76 +22,107 @@ STAGE DEPENDENCIES:
   Stage-1 is a root stage
   Stage-2 depends on stages: Stage-1
   Stage-0 depends on stages: Stage-2
-  Stage-3 depends on stages: Stage-0, Stage-5
-  Stage-4 depends on stages: Stage-2
-  Stage-5 depends on stages: Stage-4
+  Stage-3 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: src
-            Statistics: Num rows: 500 Data size: 43500 Basic stats: COMPLETE Column stats: COMPLETE
-            Select Operator
-              expressions: substr(key, 1, 1) (type: string)
-              outputColumnNames: _col0
-              Statistics: Num rows: 500 Data size: 43500 Basic stats: COMPLETE Column stats: COMPLETE
-              Reduce Output Operator
-                key expressions: _col0 (type: string)
-                null sort order: z
-                sort order: +
-                Map-reduce partition columns: rand() (type: double)
-                Statistics: Num rows: 500 Data size: 43500 Basic stats: COMPLETE Column stats: COMPLETE
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Group By Operator
-          keys: KEY._col0 (type: string)
-          mode: partial1
-          outputColumnNames: _col0
-          Statistics: Num rows: 500 Data size: 42500 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazybinary.LazyBinarySerDe
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+        Reducer 3 <- Reducer 2 (SIMPLE_EDGE)
+        Reducer 4 <- Reducer 3 (CUSTOM_SIMPLE_EDGE)
+        Reducer 5 <- Reducer 4 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: src
+                  Statistics: Num rows: 500 Data size: 43500 Basic stats: COMPLETE Column stats: COMPLETE
+                  Select Operator
+                    expressions: substr(key, 1, 1) (type: string)
+                    outputColumnNames: _col0
+                    Statistics: Num rows: 500 Data size: 43500 Basic stats: COMPLETE Column stats: COMPLETE
+                    Reduce Output Operator
+                      key expressions: _col0 (type: string)
+                      null sort order: z
+                      sort order: +
+                      Map-reduce partition columns: rand() (type: double)
+                      Statistics: Num rows: 500 Data size: 43500 Basic stats: COMPLETE Column stats: COMPLETE
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Reduce Operator Tree:
+              Group By Operator
+                keys: KEY._col0 (type: string)
+                mode: partial1
+                outputColumnNames: _col0
+                Statistics: Num rows: 500 Data size: 42500 Basic stats: COMPLETE Column stats: COMPLETE
+                Reduce Output Operator
+                  key expressions: _col0 (type: string)
+                  null sort order: z
+                  sort order: +
+                  Map-reduce partition columns: _col0 (type: string)
+                  Statistics: Num rows: 500 Data size: 42500 Basic stats: COMPLETE Column stats: COMPLETE
+        Reducer 3 
+            Execution mode: vectorized, llap
+            Reduce Operator Tree:
+              Group By Operator
+                keys: KEY._col0 (type: string)
+                mode: final
+                outputColumnNames: _col0
+                Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
+                File Output Operator
+                  compressed: false
+                  Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
+                  table:
+                      input format: org.apache.hadoop.mapred.TextInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      name: default.dest1_n168
+                Select Operator
+                  expressions: _col0 (type: string)
+                  outputColumnNames: c1
+                  Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
+                  Reduce Output Operator
+                    null sort order: 
+                    sort order: 
+                    Map-reduce partition columns: rand() (type: double)
+                    Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
+                    value expressions: c1 (type: string)
+        Reducer 4 
+            Execution mode: llap
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: compute_stats(VALUE._col0, 'hll')
+                mode: partial1
+                outputColumnNames: _col0
+                Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
+                Reduce Output Operator
+                  null sort order: 
+                  sort order: 
+                  Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
+                  value expressions: _col0 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>)
+        Reducer 5 
+            Execution mode: llap
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: compute_stats(VALUE._col0)
+                mode: final
+                outputColumnNames: _col0
+                Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
+                File Output Operator
+                  compressed: false
+                  Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 
   Stage: Stage-2
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            Reduce Output Operator
-              key expressions: _col0 (type: string)
-              null sort order: z
-              sort order: +
-              Map-reduce partition columns: _col0 (type: string)
-              Statistics: Num rows: 500 Data size: 42500 Basic stats: COMPLETE Column stats: COMPLETE
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Group By Operator
-          keys: KEY._col0 (type: string)
-          mode: final
-          outputColumnNames: _col0
-          Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
-            table:
-                input format: org.apache.hadoop.mapred.TextInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                name: default.dest1_n168
-          Select Operator
-            expressions: _col0 (type: string)
-            outputColumnNames: c1
-            Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
-            File Output Operator
-              compressed: false
-              table:
-                  input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                  output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                  serde: org.apache.hadoop.hive.serde2.lazybinary.LazyBinarySerDe
+    Dependency Collection
 
   Stage: Stage-0
     Move Operator
@@ -110,54 +141,6 @@ STAGE PLANS:
           Columns: c1
           Column Types: string
           Table: default.dest1_n168
-
-  Stage: Stage-4
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            Reduce Output Operator
-              null sort order: 
-              sort order: 
-              Map-reduce partition columns: rand() (type: double)
-              Statistics: Num rows: 316 Data size: 26860 Basic stats: COMPLETE Column stats: COMPLETE
-              value expressions: c1 (type: string)
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Group By Operator
-          aggregations: compute_stats(VALUE._col0, 'hll')
-          mode: partial1
-          outputColumnNames: _col0
-          Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazybinary.LazyBinarySerDe
-
-  Stage: Stage-5
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            Reduce Output Operator
-              null sort order: 
-              sort order: 
-              Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
-              value expressions: _col0 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>)
-      Execution mode: vectorized
-      Reduce Operator Tree:
-        Group By Operator
-          aggregations: compute_stats(VALUE._col0)
-          mode: final
-          outputColumnNames: _col0
-          Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            Statistics: Num rows: 1 Data size: 440 Basic stats: COMPLETE Column stats: COMPLETE
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
 
 PREHOOK: query: FROM src
 INSERT OVERWRITE TABLE dest1_n168 SELECT substr(src.key,1,1) GROUP BY substr(src.key,1,1)

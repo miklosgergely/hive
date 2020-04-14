@@ -20,174 +20,174 @@ POSTHOOK: Input: default@srcbucket
 POSTHOOK: Output: default@dest1_n27
 STAGE DEPENDENCIES:
   Stage-1 is a root stage
-  Stage-7 depends on stages: Stage-1 , consists of Stage-4, Stage-3, Stage-5
-  Stage-4
-  Stage-0 depends on stages: Stage-4, Stage-3, Stage-6
-  Stage-2 depends on stages: Stage-0
-  Stage-3
-  Stage-5
-  Stage-6 depends on stages: Stage-5
+  Stage-2 depends on stages: Stage-1
+  Stage-0 depends on stages: Stage-2
+  Stage-3 depends on stages: Stage-0
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 4) = 0) (type: boolean)
-              sampleDesc: BUCKET 1 OUT OF 4
-              Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-              Select Operator
-                expressions: key (type: int), value (type: string)
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 4) = 0) (type: boolean)
+                    sampleDesc: BUCKET 1 OUT OF 4
+                    Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                      File Output Operator
+                        compressed: false
+                        GlobalTableId: 1
+#### A masked pattern was here ####
+                        NumFilesPerFileSink: 1
+                        Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+#### A masked pattern was here ####
+                        table:
+                            input format: org.apache.hadoop.mapred.TextInputFormat
+                            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                            properties:
+                              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                              bucket_count -1
+                              bucketing_version 2
+                              column.name.delimiter ,
+                              columns key,value
+                              columns.comments 
+                              columns.types int:string
+#### A masked pattern was here ####
+                              name default.dest1_n27
+                              numFiles 0
+                              numRows 0
+                              rawDataSize 0
+                              serialization.ddl struct dest1_n27 { i32 key, string value}
+                              serialization.format 1
+                              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                              totalSize 0
+#### A masked pattern was here ####
+                            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                            name: default.dest1_n27
+                        TotalFiles: 1
+                        GatherStats: true
+                        MultiFileSpray: false
+                      Select Operator
+                        expressions: _col0 (type: int), _col1 (type: string)
+                        outputColumnNames: key, value
+                        Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                        Group By Operator
+                          aggregations: compute_stats(key, 'hll'), compute_stats(value, 'hll')
+                          minReductionHashAggr: 0.99
+                          mode: hash
+                          outputColumnNames: _col0, _col1
+                          Statistics: Num rows: 1 Data size: 864 Basic stats: COMPLETE Column stats: COMPLETE
+                          Reduce Output Operator
+                            null sort order: 
+                            sort order: 
+                            Statistics: Num rows: 1 Data size: 864 Basic stats: COMPLETE Column stats: COMPLETE
+                            tag: -1
+                            value expressions: _col0 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col1 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>)
+                            auto parallelism: false
+            Execution mode: llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 2
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket
+                    numFiles 2
+                    numRows 1000
+                    rawDataSize 10603
+                    serialization.ddl struct srcbucket { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 11603
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 2
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket
+                      numFiles 2
+                      numRows 1000
+                      rawDataSize 10603
+                      serialization.ddl struct srcbucket { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 11603
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket
+                  name: default.srcbucket
+            Truncated Path -> Alias:
+              /srcbucket [s]
+        Reducer 2 
+            Execution mode: llap
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: compute_stats(VALUE._col0), compute_stats(VALUE._col1)
+                mode: mergepartial
                 outputColumnNames: _col0, _col1
-                Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                Statistics: Num rows: 1 Data size: 880 Basic stats: COMPLETE Column stats: COMPLETE
                 File Output Operator
                   compressed: false
-                  GlobalTableId: 1
+                  GlobalTableId: 0
 #### A masked pattern was here ####
                   NumFilesPerFileSink: 1
-                  Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                  Statistics: Num rows: 1 Data size: 880 Basic stats: COMPLETE Column stats: COMPLETE
 #### A masked pattern was here ####
                   table:
-                      input format: org.apache.hadoop.mapred.TextInputFormat
-                      output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
                       properties:
-                        COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                        bucket_count -1
-                        bucketing_version 2
-                        column.name.delimiter ,
-                        columns key,value
-                        columns.comments 
-                        columns.types int:string
-#### A masked pattern was here ####
-                        name default.dest1_n27
-                        numFiles 0
-                        numRows 0
-                        rawDataSize 0
-                        serialization.ddl struct dest1_n27 { i32 key, string value}
+                        columns _col0,_col1
+                        columns.types struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
                         serialization.format 1
                         serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                        totalSize 0
-#### A masked pattern was here ####
                       serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                      name: default.dest1_n27
                   TotalFiles: 1
-                  GatherStats: true
+                  GatherStats: false
                   MultiFileSpray: false
-                Select Operator
-                  expressions: _col0 (type: int), _col1 (type: string)
-                  outputColumnNames: key, value
-                  Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                  Group By Operator
-                    aggregations: compute_stats(key, 'hll'), compute_stats(value, 'hll')
-                    minReductionHashAggr: 0.99
-                    mode: hash
-                    outputColumnNames: _col0, _col1
-                    Statistics: Num rows: 1 Data size: 864 Basic stats: COMPLETE Column stats: COMPLETE
-                    Reduce Output Operator
-                      null sort order: 
-                      sort order: 
-                      Statistics: Num rows: 1 Data size: 864 Basic stats: COMPLETE Column stats: COMPLETE
-                      tag: -1
-                      value expressions: _col0 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col1 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>)
-                      auto parallelism: false
-      Path -> Alias:
-#### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 2
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket
-              numFiles 2
-              numRows 1000
-              rawDataSize 10603
-              serialization.ddl struct srcbucket { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 11603
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 2
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket
-                numFiles 2
-                numRows 1000
-                rawDataSize 10603
-                serialization.ddl struct srcbucket { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 11603
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket
-            name: default.srcbucket
-      Truncated Path -> Alias:
-        /srcbucket [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Group By Operator
-          aggregations: compute_stats(VALUE._col0), compute_stats(VALUE._col1)
-          mode: mergepartial
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 1 Data size: 880 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 1 Data size: 880 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
 
-  Stage: Stage-7
-    Conditional Operator
-
-  Stage: Stage-4
-    Move Operator
-      files:
-          hdfs directory: true
-#### A masked pattern was here ####
+  Stage: Stage-2
+    Dependency Collection
 
   Stage: Stage-0
     Move Operator
@@ -218,7 +218,7 @@ STAGE PLANS:
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.dest1_n27
 
-  Stage: Stage-2
+  Stage: Stage-3
     Stats Work
       Basic Stats Work:
 #### A masked pattern was here ####
@@ -227,192 +227,6 @@ STAGE PLANS:
           Column Types: int, string
           Table: default.dest1_n27
           Is Table Level Stats: true
-
-  Stage: Stage-3
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            GatherStats: false
-            File Output Operator
-              compressed: false
-              GlobalTableId: 0
-#### A masked pattern was here ####
-              NumFilesPerFileSink: 1
-              table:
-                  input format: org.apache.hadoop.mapred.TextInputFormat
-                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                  properties:
-                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                    bucket_count -1
-                    bucketing_version 2
-                    column.name.delimiter ,
-                    columns key,value
-                    columns.comments 
-                    columns.types int:string
-#### A masked pattern was here ####
-                    name default.dest1_n27
-                    numFiles 0
-                    numRows 0
-                    rawDataSize 0
-                    serialization.ddl struct dest1_n27 { i32 key, string value}
-                    serialization.format 1
-                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                    totalSize 0
-#### A masked pattern was here ####
-                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                  name: default.dest1_n27
-              TotalFiles: 1
-              GatherStats: false
-              MultiFileSpray: false
-      Path -> Alias:
-#### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: -ext-10002
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count -1
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.dest1_n27
-              numFiles 0
-              numRows 0
-              rawDataSize 0
-              serialization.ddl struct dest1_n27 { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 0
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count -1
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.dest1_n27
-                numFiles 0
-                numRows 0
-                rawDataSize 0
-                serialization.ddl struct dest1_n27 { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 0
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.dest1_n27
-            name: default.dest1_n27
-      Truncated Path -> Alias:
-#### A masked pattern was here ####
-
-  Stage: Stage-5
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            GatherStats: false
-            File Output Operator
-              compressed: false
-              GlobalTableId: 0
-#### A masked pattern was here ####
-              NumFilesPerFileSink: 1
-              table:
-                  input format: org.apache.hadoop.mapred.TextInputFormat
-                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                  properties:
-                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                    bucket_count -1
-                    bucketing_version 2
-                    column.name.delimiter ,
-                    columns key,value
-                    columns.comments 
-                    columns.types int:string
-#### A masked pattern was here ####
-                    name default.dest1_n27
-                    numFiles 0
-                    numRows 0
-                    rawDataSize 0
-                    serialization.ddl struct dest1_n27 { i32 key, string value}
-                    serialization.format 1
-                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                    totalSize 0
-#### A masked pattern was here ####
-                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                  name: default.dest1_n27
-              TotalFiles: 1
-              GatherStats: false
-              MultiFileSpray: false
-      Path -> Alias:
-#### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: -ext-10002
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count -1
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.dest1_n27
-              numFiles 0
-              numRows 0
-              rawDataSize 0
-              serialization.ddl struct dest1_n27 { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 0
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count -1
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.dest1_n27
-                numFiles 0
-                numRows 0
-                rawDataSize 0
-                serialization.ddl struct dest1_n27 { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 0
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.dest1_n27
-            name: default.dest1_n27
-      Truncated Path -> Alias:
-#### A masked pattern was here ####
-
-  Stage: Stage-6
-    Move Operator
-      files:
-          hdfs directory: true
-#### A masked pattern was here ####
 
 PREHOOK: query: INSERT OVERWRITE TABLE dest1_n27 SELECT s.*
 FROM srcbucket TABLESAMPLE (BUCKET 1 OUT OF 4 on key) s
@@ -721,112 +535,121 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 4) = 3) (type: boolean)
-              sampleDesc: BUCKET 4 OUT OF 4
-              Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 4) = 3) (type: boolean)
+                    sampleDesc: BUCKET 4 OUT OF 4
+                    Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 2
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket
+                    numFiles 2
+                    numRows 1000
+                    rawDataSize 10603
+                    serialization.ddl struct srcbucket { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 11603
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 2
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket
+                      numFiles 2
+                      numRows 1000
+                      rawDataSize 10603
+                      serialization.ddl struct srcbucket { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 11603
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket
+                  name: default.srcbucket
+            Truncated Path -> Alias:
+              /srcbucket [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 2
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket
-              numFiles 2
-              numRows 1000
-              rawDataSize 10603
-              serialization.ddl struct srcbucket { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 11603
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 2
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket
-                numFiles 2
-                numRows 1000
-                rawDataSize 10603
-                serialization.ddl struct srcbucket { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 11603
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket
-            name: default.srcbucket
-      Truncated Path -> Alias:
-        /srcbucket [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -1132,112 +955,121 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 2) = 0) (type: boolean)
-              sampleDesc: BUCKET 1 OUT OF 2
-              Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 2) = 0) (type: boolean)
+                    sampleDesc: BUCKET 1 OUT OF 2
+                    Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 2
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket
+                    numFiles 2
+                    numRows 1000
+                    rawDataSize 10603
+                    serialization.ddl struct srcbucket { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 11603
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 2
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket
+                      numFiles 2
+                      numRows 1000
+                      rawDataSize 10603
+                      serialization.ddl struct srcbucket { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 11603
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket
+                  name: default.srcbucket
+            Truncated Path -> Alias:
+              /srcbucket [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 2
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket
-              numFiles 2
-              numRows 1000
-              rawDataSize 10603
-              serialization.ddl struct srcbucket { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 11603
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 2
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket
-                numFiles 2
-                numRows 1000
-                rawDataSize 10603
-                serialization.ddl struct srcbucket { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 11603
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket
-            name: default.srcbucket
-      Truncated Path -> Alias:
-        /srcbucket [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -1767,111 +1599,120 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 3) = 0) (type: boolean)
-              Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 3) = 0) (type: boolean)
+                    Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 2
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket
+                    numFiles 2
+                    numRows 1000
+                    rawDataSize 10603
+                    serialization.ddl struct srcbucket { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 11603
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 2
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket
+                      numFiles 2
+                      numRows 1000
+                      rawDataSize 10603
+                      serialization.ddl struct srcbucket { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 11603
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket
+                  name: default.srcbucket
+            Truncated Path -> Alias:
+              /srcbucket [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 2
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket
-              numFiles 2
-              numRows 1000
-              rawDataSize 10603
-              serialization.ddl struct srcbucket { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 11603
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 2
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket
-                numFiles 2
-                numRows 1000
-                rawDataSize 10603
-                serialization.ddl struct srcbucket { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 11603
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket
-            name: default.srcbucket
-      Truncated Path -> Alias:
-        /srcbucket [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -2283,111 +2124,120 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 3) = 1) (type: boolean)
-              Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 1000 Data size: 95000 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 3) = 1) (type: boolean)
+                    Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 2
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket
+                    numFiles 2
+                    numRows 1000
+                    rawDataSize 10603
+                    serialization.ddl struct srcbucket { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 11603
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 2
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket
+                      numFiles 2
+                      numRows 1000
+                      rawDataSize 10603
+                      serialization.ddl struct srcbucket { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 11603
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket
+                  name: default.srcbucket
+            Truncated Path -> Alias:
+              /srcbucket [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 2
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket
-              numFiles 2
-              numRows 1000
-              rawDataSize 10603
-              serialization.ddl struct srcbucket { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 11603
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 2
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket
-                numFiles 2
-                numRows 1000
-                rawDataSize 10603
-                serialization.ddl struct srcbucket { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 11603
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket
-            name: default.srcbucket
-      Truncated Path -> Alias:
-        /srcbucket [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -2738,112 +2588,121 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 2) = 0) (type: boolean)
-              sampleDesc: BUCKET 1 OUT OF 2
-              Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 2) = 0) (type: boolean)
+                    sampleDesc: BUCKET 1 OUT OF 2
+                    Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket2
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 4
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket2
+                    numFiles 4
+                    numRows 500
+                    rawDataSize 5312
+                    serialization.ddl struct srcbucket2 { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 5812
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 4
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket2
+                      numFiles 4
+                      numRows 500
+                      rawDataSize 5312
+                      serialization.ddl struct srcbucket2 { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 5812
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket2
+                  name: default.srcbucket2
+            Truncated Path -> Alias:
+              /srcbucket2 [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket2
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 4
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket2
-              numFiles 4
-              numRows 500
-              rawDataSize 5312
-              serialization.ddl struct srcbucket2 { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 5812
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 4
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket2
-                numFiles 4
-                numRows 500
-                rawDataSize 5312
-                serialization.ddl struct srcbucket2 { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 5812
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket2
-            name: default.srcbucket2
-      Truncated Path -> Alias:
-        /srcbucket2 [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -3120,112 +2979,121 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 4) = 1) (type: boolean)
-              sampleDesc: BUCKET 2 OUT OF 4
-              Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 500 Data size: 47500 Basic stats: COMPLETE Column stats: COMPLETE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 4) = 1) (type: boolean)
+                    sampleDesc: BUCKET 2 OUT OF 4
+                    Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: srcbucket2
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 4
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.srcbucket2
+                    numFiles 4
+                    numRows 500
+                    rawDataSize 5312
+                    serialization.ddl struct srcbucket2 { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 5812
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 4
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.srcbucket2
+                      numFiles 4
+                      numRows 500
+                      rawDataSize 5312
+                      serialization.ddl struct srcbucket2 { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 5812
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.srcbucket2
+                  name: default.srcbucket2
+            Truncated Path -> Alias:
+              /srcbucket2 [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: srcbucket2
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 4
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.srcbucket2
-              numFiles 4
-              numRows 500
-              rawDataSize 5312
-              serialization.ddl struct srcbucket2 { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 5812
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 4
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.srcbucket2
-                numFiles 4
-                numRows 500
-                rawDataSize 5312
-                serialization.ddl struct srcbucket2 { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 5812
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.srcbucket2
-            name: default.srcbucket2
-      Truncated Path -> Alias:
-        /srcbucket2 [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 250 Data size: 23750 Basic stats: COMPLETE Column stats: COMPLETE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator
@@ -3393,112 +3261,121 @@ STAGE DEPENDENCIES:
 
 STAGE PLANS:
   Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: s
-            Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
-            GatherStats: false
-            Filter Operator
-              isSamplingPred: true
-              predicate: (((hash(key) & 2147483647) % 2) = 0) (type: boolean)
-              sampleDesc: BUCKET 1 OUT OF 2
-              Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
+    Tez
+#### A masked pattern was here ####
+      Edges:
+        Reducer 2 <- Map 1 (SIMPLE_EDGE)
+#### A masked pattern was here ####
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: s
+                  Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
+                  GatherStats: false
+                  Filter Operator
+                    isSamplingPred: true
+                    predicate: (((hash(key) & 2147483647) % 2) = 0) (type: boolean)
+                    sampleDesc: BUCKET 1 OUT OF 2
+                    Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
+                    Select Operator
+                      expressions: key (type: int), value (type: string)
+                      outputColumnNames: _col0, _col1
+                      Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
+                      Reduce Output Operator
+                        key expressions: _col0 (type: int), _col1 (type: string)
+                        null sort order: zz
+                        sort order: ++
+                        Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
+                        tag: -1
+                        auto parallelism: false
+            Execution mode: vectorized, llap
+            LLAP IO: no inputs
+            Path -> Alias:
+#### A masked pattern was here ####
+            Path -> Partition:
+#### A masked pattern was here ####
+                Partition
+                  base file name: empty_bucket
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  properties:
+                    COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                    bucket_count 2
+                    bucket_field_name key
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns key,value
+                    columns.comments 
+                    columns.types int:string
+#### A masked pattern was here ####
+                    name default.empty_bucket
+                    numFiles 0
+                    numRows 0
+                    rawDataSize 0
+                    serialization.ddl struct empty_bucket { i32 key, string value}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    totalSize 0
+#### A masked pattern was here ####
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    properties:
+                      COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
+                      bucket_count 2
+                      bucket_field_name key
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns key,value
+                      columns.comments 
+                      columns.types int:string
+#### A masked pattern was here ####
+                      name default.empty_bucket
+                      numFiles 0
+                      numRows 0
+                      rawDataSize 0
+                      serialization.ddl struct empty_bucket { i32 key, string value}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      totalSize 0
+#### A masked pattern was here ####
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.empty_bucket
+                  name: default.empty_bucket
+            Truncated Path -> Alias:
+              /empty_bucket [s]
+        Reducer 2 
+            Execution mode: vectorized, llap
+            Needs Tagging: false
+            Reduce Operator Tree:
               Select Operator
-                expressions: key (type: int), value (type: string)
+                expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
                 outputColumnNames: _col0, _col1
                 Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
-                Reduce Output Operator
-                  key expressions: _col0 (type: int), _col1 (type: string)
-                  null sort order: zz
-                  sort order: ++
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 0
+#### A masked pattern was here ####
+                  NumFilesPerFileSink: 1
                   Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
-                  tag: -1
-                  auto parallelism: false
-      Execution mode: vectorized
-      Path -> Alias:
 #### A masked pattern was here ####
-      Path -> Partition:
-#### A masked pattern was here ####
-          Partition
-            base file name: empty_bucket
-            input format: org.apache.hadoop.mapred.TextInputFormat
-            output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-            properties:
-              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-              bucket_count 2
-              bucket_field_name key
-              bucketing_version 2
-              column.name.delimiter ,
-              columns key,value
-              columns.comments 
-              columns.types int:string
-#### A masked pattern was here ####
-              name default.empty_bucket
-              numFiles 0
-              numRows 0
-              rawDataSize 0
-              serialization.ddl struct empty_bucket { i32 key, string value}
-              serialization.format 1
-              serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              totalSize 0
-#### A masked pattern was here ####
-            serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-          
-              input format: org.apache.hadoop.mapred.TextInputFormat
-              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              properties:
-                COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"key":"true","value":"true"}}
-                bucket_count 2
-                bucket_field_name key
-                bucketing_version 2
-                column.name.delimiter ,
-                columns key,value
-                columns.comments 
-                columns.types int:string
-#### A masked pattern was here ####
-                name default.empty_bucket
-                numFiles 0
-                numRows 0
-                rawDataSize 0
-                serialization.ddl struct empty_bucket { i32 key, string value}
-                serialization.format 1
-                serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                totalSize 0
-#### A masked pattern was here ####
-              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              name: default.empty_bucket
-            name: default.empty_bucket
-      Truncated Path -> Alias:
-        /empty_bucket [s]
-      Needs Tagging: false
-      Reduce Operator Tree:
-        Select Operator
-          expressions: KEY.reducesinkkey0 (type: int), KEY.reducesinkkey1 (type: string)
-          outputColumnNames: _col0, _col1
-          Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
-          File Output Operator
-            compressed: false
-            GlobalTableId: 0
-#### A masked pattern was here ####
-            NumFilesPerFileSink: 1
-            Statistics: Num rows: 1 Data size: 188 Basic stats: COMPLETE Column stats: NONE
-#### A masked pattern was here ####
-            table:
-                input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                properties:
-                  columns _col0,_col1
-                  columns.types int:string
-                  escape.delim \
-                  hive.serialization.extend.additional.nesting.levels true
-                  serialization.escape.crlf true
-                  serialization.format 1
-                  serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-            TotalFiles: 1
-            GatherStats: false
-            MultiFileSpray: false
+                  table:
+                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                      properties:
+                        columns _col0,_col1
+                        columns.types int:string
+                        escape.delim \
+                        hive.serialization.extend.additional.nesting.levels true
+                        serialization.escape.crlf true
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  TotalFiles: 1
+                  GatherStats: false
+                  MultiFileSpray: false
 
   Stage: Stage-0
     Fetch Operator

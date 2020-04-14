@@ -38,13 +38,13 @@ PREHOOK: query: SELECT
 FROM macro_test
 PREHOOK: type: QUERY
 PREHOOK: Input: default@macro_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT
     CONCAT(STRING_LEN(x), ":", STRING_LEN_PLUS_ONE(x), ":", STRING_LEN_PLUS_TWO(x)) a
 FROM macro_test
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@macro_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 2:3:4
 1:2:3
 3:4:5
@@ -54,14 +54,14 @@ FROM macro_test
 sort by a
 PREHOOK: type: QUERY
 PREHOOK: Input: default@macro_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT
     CONCAT(STRING_LEN(x), ":", STRING_LEN_PLUS_ONE(x), ":", STRING_LEN_PLUS_TWO(x)) a
 FROM macro_test
 sort by a
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@macro_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 1:2:3
 2:3:4
 3:4:5
@@ -71,14 +71,14 @@ FROM macro_test
 sort by a desc
 PREHOOK: type: QUERY
 PREHOOK: Input: default@macro_test
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: SELECT
     CONCAT(STRING_LEN(x), ":", STRING_LEN_PLUS_ONE(x), ":", STRING_LEN_PLUS_TWO(x)) a
 FROM macro_test
 sort by a desc
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@macro_test
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 3:4:5
 2:3:4
 1:2:3

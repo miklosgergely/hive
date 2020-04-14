@@ -26,56 +26,35 @@ PREHOOK: query: explain
 select transform(key) using 'cat' as key1 from nullscript
 PREHOOK: type: QUERY
 PREHOOK: Input: default@nullscript
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: explain
 select transform(key) using 'cat' as key1 from nullscript
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@nullscript
-#### A masked pattern was here ####
-STAGE DEPENDENCIES:
-  Stage-1 is a root stage
-  Stage-0 depends on stages: Stage-1
+POSTHOOK: Output: hdfs://### HDFS PATH ###
+Plan not optimized by CBO because the statement uses scripts
 
-STAGE PLANS:
-  Stage: Stage-1
-    Map Reduce
-      Map Operator Tree:
-          TableScan
-            alias: nullscript
-            Statistics: Num rows: 1 Data size: 184 Basic stats: COMPLETE Column stats: NONE
-            Select Operator
-              expressions: key (type: string)
-              outputColumnNames: _col0
-              Statistics: Num rows: 1 Data size: 184 Basic stats: COMPLETE Column stats: NONE
-              Transform Operator
-                command: cat
-                output info:
-                    input format: org.apache.hadoop.mapred.TextInputFormat
-                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                Statistics: Num rows: 1 Data size: 184 Basic stats: COMPLETE Column stats: NONE
-                File Output Operator
-                  compressed: false
-                  Statistics: Num rows: 1 Data size: 184 Basic stats: COMPLETE Column stats: NONE
-                  table:
-                      input format: org.apache.hadoop.mapred.SequenceFileInputFormat
-                      output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
-                      serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-
-  Stage: Stage-0
-    Fetch Operator
-      limit: -1
-      Processor Tree:
-        ListSink
+Stage-0
+  Fetch Operator
+    limit:-1
+    Stage-1
+      Map 1
+      File Output Operator [FS_3]
+        Transform Operator [SCR_2] (rows=1 width=184)
+          command:cat
+          Select Operator [SEL_1] (rows=1 width=184)
+            Output:["_col0"]
+            TableScan [TS_0] (rows=1 width=184)
+              default@nullscript,nullscript,Tbl:COMPLETE,Col:NONE,Output:["key"]
 
 PREHOOK: query: select transform(key) using 'cat' as key1 from nullscript
 PREHOOK: type: QUERY
 PREHOOK: Input: default@nullscript
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select transform(key) using 'cat' as key1 from nullscript
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@nullscript
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 238
 86
 311

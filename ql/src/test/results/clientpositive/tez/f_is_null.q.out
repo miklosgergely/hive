@@ -18,36 +18,36 @@ POSTHOOK: Lineage: t.a SCRIPT []
 PREHOOK: query: select 'expected 1 (to_date)',count(1) from t where to_date(a) is null
 PREHOOK: type: QUERY
 PREHOOK: Input: default@t
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select 'expected 1 (to_date)',count(1) from t where to_date(a) is null
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@t
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 expected 1 (to_date)	1
 PREHOOK: query: select 'expected 1 (second)', count(1) from t where second(a) is null
 PREHOOK: type: QUERY
 PREHOOK: Input: default@t
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select 'expected 1 (second)', count(1) from t where second(a) is null
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@t
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 expected 1 (second)	1
 PREHOOK: query: select 'expected 1 (to_date)',count(1) from t where to_date(a) is null
 PREHOOK: type: QUERY
 PREHOOK: Input: default@t
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select 'expected 1 (to_date)',count(1) from t where to_date(a) is null
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@t
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 expected 1 (to_date)	1
 PREHOOK: query: select 'expected 1 (second)', count(1) from t where second(a) is null
 PREHOOK: type: QUERY
 PREHOOK: Input: default@t
-#### A masked pattern was here ####
+PREHOOK: Output: hdfs://### HDFS PATH ###
 POSTHOOK: query: select 'expected 1 (second)', count(1) from t where second(a) is null
 POSTHOOK: type: QUERY
 POSTHOOK: Input: default@t
-#### A masked pattern was here ####
+POSTHOOK: Output: hdfs://### HDFS PATH ###
 expected 1 (second)	1

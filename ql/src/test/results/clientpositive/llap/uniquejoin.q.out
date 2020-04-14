@@ -85,7 +85,17 @@ POSTHOOK: Input: default@t1_n1
 POSTHOOK: Input: default@t2_n1
 POSTHOOK: Input: default@t3_n0
 #### A masked pattern was here ####
+1	NULL	NULL
 2	2	2
+3	3	NULL
+7	NULL	7
+8	8	NULL
+8	8	NULL
+8	8	NULL
+8	8	NULL
+NULL	4	4
+NULL	5	NULL
+NULL	NULL	6
 PREHOOK: query: FROM UNIQUEJOIN T1_n1 a (a.key), T2_n1 b (b.key-1), T3_n0 c (c.key)
 SELECT a.key, b.key, c.key
 PREHOOK: type: QUERY
@@ -100,9 +110,15 @@ POSTHOOK: Input: default@t1_n1
 POSTHOOK: Input: default@t2_n1
 POSTHOOK: Input: default@t3_n0
 #### A masked pattern was here ####
+1	2	NULL
 2	3	2
+3	4	NULL
 7	8	7
 7	8	7
+8	NULL	NULL
+8	NULL	NULL
+NULL	5	4
+NULL	NULL	6
 PREHOOK: query: FROM UNIQUEJOIN PRESERVE T1_n1 a (a.key, a.val), PRESERVE T2_n1 b (b.key, b.val), PRESERVE T3_n0 c (c.key, c.val)
 SELECT a.key, a.val, b.key, b.val, c.key, c.val
 PREHOOK: type: QUERY
@@ -151,6 +167,7 @@ POSTHOOK: Input: default@t3_n0
 8	8	NULL
 8	8	NULL
 NULL	4	4
+NULL	5	NULL
 NULL	NULL	6
 PREHOOK: query: FROM UNIQUEJOIN PRESERVE T1_n1 a (a.key), T2_n1 b(b.key)
 SELECT a.key, b.key
@@ -172,3 +189,5 @@ POSTHOOK: Input: default@t2_n1
 8	8
 8	8
 8	8
+NULL	4
+NULL	5

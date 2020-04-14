@@ -245,6 +245,7 @@ POSTHOOK: Input: default@date_serde_regex
 #### A masked pattern was here ####
 2010-10-20	11
 2010-10-21	12
+2010-10-29	12
 2010-10-22	11
 2010-10-23	12
 2010-10-24	12
@@ -252,7 +253,6 @@ POSTHOOK: Input: default@date_serde_regex
 2010-10-26	13
 2010-10-27	11
 2010-10-28	12
-2010-10-29	12
 2010-10-30	11
 2010-10-31	8
 PREHOOK: query: create temporary table date_serde_lb (

@@ -644,7 +644,7 @@ Table Parameters:
 	numPartitions       	2                   
 	numRows             	1                   
 	rawDataSize         	0                   
-	totalSize           	2945                
+	totalSize           	2941                
 	transactional       	true                
 	transactional_properties	default             
 #### A masked pattern was here ####
@@ -720,7 +720,7 @@ Partition Parameters:
 	numFiles            	2                   
 	numRows             	1                   
 	rawDataSize         	0                   
-	totalSize           	1497                
+	totalSize           	1493                
 #### A masked pattern was here ####
 	 	 
 # Storage Information	 	 
